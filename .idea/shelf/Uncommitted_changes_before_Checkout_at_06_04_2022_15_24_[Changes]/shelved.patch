@@ -1,0 +1,42 @@
+Index: node_modules/better-sqlite3/package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"_from\": \"better-sqlite3\",\n  \"_id\": \"better-sqlite3@7.5.0\",\n  \"_inBundle\": false,\n  \"_integrity\": \"sha512-6FdG9DoytYGDhLW7VWW1vxjEz7xHkqK6LnaUQYA8d6GHNgZhu9PFX2xwKEEnSBRoT1J4PjTUPeg217ShxNmuPg==\",\n  \"_location\": \"/better-sqlite3\",\n  \"_phantomChildren\": {},\n  \"_requested\": {\n    \"type\": \"tag\",\n    \"registry\": true,\n    \"raw\": \"better-sqlite3\",\n    \"name\": \"better-sqlite3\",\n    \"escapedName\": \"better-sqlite3\",\n    \"rawSpec\": \"\",\n    \"saveSpec\": null,\n    \"fetchSpec\": \"latest\"\n  },\n  \"_requiredBy\": [\n    \"#USER\",\n    \"/\"\n  ],\n  \"_resolved\": \"https://registry.npmjs.org/better-sqlite3/-/better-sqlite3-7.5.0.tgz\",\n  \"_shasum\": \"2a91cb616453f002096743b0e5b66a7021cd1c63\",\n  \"_spec\": \"better-sqlite3\",\n  \"_where\": \"/amuhome/a20005638/IdeaProjects/project_city_web\",\n  \"author\": {\n    \"name\": \"Joshua Wise\",\n    \"email\": \"joshuathomaswise@gmail.com\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/JoshuaWise/better-sqlite3/issues\"\n  },\n  \"bundleDependencies\": false,\n  \"dependencies\": {\n    \"bindings\": \"^1.5.0\",\n    \"prebuild-install\": \"^7.0.0\"\n  },\n  \"deprecated\": false,\n  \"description\": \"The fastest and simplest library for SQLite3 in Node.js.\",\n  \"devDependencies\": {\n    \"chai\": \"^4.3.4\",\n    \"cli-color\": \"^2.0.0\",\n    \"fs-extra\": \"^10.0.0\",\n    \"mocha\": \"^8.3.2\",\n    \"nodemark\": \"^0.3.0\",\n    \"prebuild\": \"^11.0.0\",\n    \"sqlite\": \"^4.0.23\",\n    \"sqlite3\": \"^5.0.2\"\n  },\n  \"files\": [\n    \"binding.gyp\",\n    \"src/*.[ch]pp\",\n    \"lib/**\",\n    \"deps/**\"\n  ],\n  \"homepage\": \"http://github.com/JoshuaWise/better-sqlite3\",\n  \"keywords\": [\n    \"sql\",\n    \"sqlite\",\n    \"sqlite3\",\n    \"transactions\",\n    \"user-defined functions\",\n    \"aggregate functions\",\n    \"window functions\",\n    \"database\"\n  ],\n  \"license\": \"MIT\",\n  \"main\": \"lib/index.js\",\n  \"name\": \"better-sqlite3\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/JoshuaWise/better-sqlite3.git\"\n  },\n  \"scripts\": {\n    \"benchmark\": \"node benchmark\",\n    \"build-debug\": \"node-gyp rebuild --debug\",\n    \"build-release\": \"node-gyp rebuild --release\",\n    \"download\": \"bash ./deps/download.sh\",\n    \"install\": \"prebuild-install || npm run build-release\",\n    \"lzz\": \"lzz -hx hpp -sx cpp -k BETTER_SQLITE3 -d -hl -sl -e ./src/better_sqlite3.lzz\",\n    \"rebuild-debug\": \"npm run lzz && npm run build-debug\",\n    \"rebuild-release\": \"npm run lzz && npm run build-release\",\n    \"test\": \"mocha --exit --slow=75 --timeout=5000\"\n  },\n  \"version\": \"7.5.0\"\n}\n
+===================================================================
+diff --git a/node_modules/better-sqlite3/package.json b/node_modules/better-sqlite3/package.json
+--- a/node_modules/better-sqlite3/package.json	
++++ b/node_modules/better-sqlite3/package.json	
+@@ -1,19 +1,19 @@
+ {
+-  "_from": "better-sqlite3",
++  "_from": "better-sqlite3@^7.5.0",
+   "_id": "better-sqlite3@7.5.0",
+   "_inBundle": false,
+   "_integrity": "sha512-6FdG9DoytYGDhLW7VWW1vxjEz7xHkqK6LnaUQYA8d6GHNgZhu9PFX2xwKEEnSBRoT1J4PjTUPeg217ShxNmuPg==",
+   "_location": "/better-sqlite3",
+   "_phantomChildren": {},
+   "_requested": {
+-    "type": "tag",
++    "type": "range",
+     "registry": true,
+-    "raw": "better-sqlite3",
++    "raw": "better-sqlite3@^7.5.0",
+     "name": "better-sqlite3",
+     "escapedName": "better-sqlite3",
+-    "rawSpec": "",
++    "rawSpec": "^7.5.0",
+     "saveSpec": null,
+-    "fetchSpec": "latest"
++    "fetchSpec": "^7.5.0"
+   },
+   "_requiredBy": [
+     "#USER",
+@@ -21,7 +21,7 @@
+   ],
+   "_resolved": "https://registry.npmjs.org/better-sqlite3/-/better-sqlite3-7.5.0.tgz",
+   "_shasum": "2a91cb616453f002096743b0e5b66a7021cd1c63",
+-  "_spec": "better-sqlite3",
++  "_spec": "better-sqlite3@^7.5.0",
+   "_where": "/amuhome/a20005638/IdeaProjects/project_city_web",
+   "author": {
+     "name": "Joshua Wise",

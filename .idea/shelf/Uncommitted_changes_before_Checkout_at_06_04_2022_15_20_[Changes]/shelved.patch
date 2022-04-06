@@ -1,0 +1,206 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1649251002491)
++++ b/.idea/workspace.xml	(date 1649251002491)
+@@ -0,0 +1,140 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ChangeListManager">
++    <list default="true" id="d89d766f-c792-49c5-aabf-564425b675a9" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="JavaScript File" />
++        <option value="HTML File" />
++        <option value="package.json" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="db" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="HighlightingSettingsPerFile">
++    <setting file="file://$PROJECT_DIR$/views/read.html" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/views/search.html" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/views/Partie2-Lina-Aitrazzouk_Clement-Fresnel" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/data.json" root0="SKIP_INSPECTION" />
++    <setting file="file://$PROJECT_DIR$/views/header.html" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/package-lock.json" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/model.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/create-db.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/views/footer.html" root0="FORCE_HIGHLIGHTING" />
++  </component>
++  <component name="ProjectId" id="27PssMQVQSRlBK6vmmgrIcWH2rf" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="DefaultHtmlFileTemplate" value="HTML File" />
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="javascript.nodejs.core.library.configured.version" value="14.17.1" />
++    <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../foodapp_" />
++    <property name="nodejs_package_manager_path" value="npm" />
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="d89d766f-c792-49c5-aabf-564425b675a9" name="Changes" comment="" />
++      <created>1649233261061</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1649233261061</updated>
++      <workItem from="1649233264355" duration="3941000" />
++      <workItem from="1649246768281" duration="4089000" />
++      <workItem from="1649250889610" duration="114000" />
++    </task>
++    <task id="LOCAL-00001" summary="test">
++      <created>1649233315648</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1649233315648</updated>
++    </task>
++    <task id="LOCAL-00002" summary=".">
++      <created>1649233601611</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1649233601611</updated>
++    </task>
++    <task id="LOCAL-00003" summary="structure a modifier">
++      <created>1649236284325</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1649236284325</updated>
++    </task>
++    <task id="LOCAL-00004" summary="structure a modifier&#10;debut modification">
++      <created>1649239209954</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1649239209955</updated>
++    </task>
++    <task id="LOCAL-00005" summary="structure a modifier&#10;debut modification">
++      <created>1649248351096</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1649248351096</updated>
++    </task>
++    <task id="LOCAL-00006" summary="structure a modifier&#10;debut modification">
++      <created>1649248975284</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1649248975284</updated>
++    </task>
++    <task id="LOCAL-00007" summary="test">
++      <created>1649250632162</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1649250632162</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="." />
++    <MESSAGE value="structure a modifier" />
++    <MESSAGE value="structure a modifier&#10;debut modification" />
++    <MESSAGE value="test" />
++    <option name="LAST_COMMIT_MESSAGE" value="test" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/runConfigurations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+new file mode 100644
+--- /dev/null	(date 1649250919324)
++++ b/.idea/runConfigurations.xml	(date 1649250919324)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RunConfigurationProducerService">
++    <option name="ignoredProducers">
++      <set>
++        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1649250919366)
++++ b/.idea/vcs.xml	(date 1649250919366)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1649250827713)
++++ b/.idea/misc.xml	(date 1649250827713)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file

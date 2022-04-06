@@ -1,0 +1,56 @@
+Index: create-db.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use strict\"\n\nconst fs = require('fs');\nconst Sqlite = require('better-sqlite3');\n\nlet db = new Sqlite('db.sqlite');\n\nlet entries = JSON.parse(fs.readFileSync('data.json').toString());\nlet load = function(filename) {\n  const recipes = JSON.parse(fs.readFileSync(filename));\n\n  //........................................\n  db.prepare('DROP TABLE IF EXISTS user').run();\n  db.prepare('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, password TEXT)').run();\n  //........................................\n\n  db.prepare('DROP TABLE IF EXISTS monument').run();\n  db.prepare('DROP TABLE IF EXISTS region').run();\n  //db.prepare('DROP TABLE IF EXISTS stage').run();\n\n  db.prepare('CREATE TABLE monument (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, img TEXT, city TEXT)').run();\n  db.prepare('CREATE TABLE region (monument INT, rank INT, name TEXT)').run();\n  //db.prepare('CREATE TABLE stage (recipe INT, rank INT, description TEXT)').run();\n\n  let insert1 = db.prepare('INSERT INTO monument VALUES (@id, @title, @img, @region, @city)');\n  let insert2 = db.prepare('INSERT INTO region VALUES (@recipe, @rank, @name)');\n  //let insert3 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');\n\n  let transaction = db.transaction((monuments) => {\n\n    for(let id = 0;id < monuments.length; id++) {\n      let monument = monuments[id];\n      monument.id = id;\n      insert1.run(monument);\n      for(let j = 0; j < monument.region.length; j++) {\n        insert2.run({recipe: id, rank: j, name: monument.region[j].name});\n      }\n      /*for(let j = 0; j < monument.stages.length; j++) {\n        insert3.run({recipe: id, rank: j, description: recipe.stages[j].description});\n      }*/\n    }\n  });\n\n  transaction(recipes);\n}\n\nload('data.json');\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/create-db.js b/create-db.js
+--- a/create-db.js	(revision 849f3d10deb786c7d214403838dfa49f04e1328b)
++++ b/create-db.js	(date 1649251526020)
+@@ -7,23 +7,22 @@
+ 
+ let entries = JSON.parse(fs.readFileSync('data.json').toString());
+ let load = function(filename) {
+-  const recipes = JSON.parse(fs.readFileSync(filename));
++  const monuments = JSON.parse(fs.readFileSync(filename));
+ 
+   //........................................
+   db.prepare('DROP TABLE IF EXISTS user').run();
+   db.prepare('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, password TEXT)').run();
+-  //........................................
+ 
+   db.prepare('DROP TABLE IF EXISTS monument').run();
+   db.prepare('DROP TABLE IF EXISTS region').run();
+   //db.prepare('DROP TABLE IF EXISTS stage').run();
+ 
+-  db.prepare('CREATE TABLE monument (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, img TEXT, city TEXT)').run();
++  db.prepare('CREATE TABLE monument (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, img TEXT, city TEXT)').run();
+   db.prepare('CREATE TABLE region (monument INT, rank INT, name TEXT)').run();
+   //db.prepare('CREATE TABLE stage (recipe INT, rank INT, description TEXT)').run();
+ 
+-  let insert1 = db.prepare('INSERT INTO monument VALUES (@id, @title, @img, @region, @city)');
+-  let insert2 = db.prepare('INSERT INTO region VALUES (@recipe, @rank, @name)');
++  let insert1 = db.prepare('INSERT INTO monument VALUES (@id, @name, @img, @city)');
++  let insert2 = db.prepare('INSERT INTO region VALUES (@monument, @rank, @name)');
+   //let insert3 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
+ 
+   let transaction = db.transaction((monuments) => {
+@@ -33,7 +32,7 @@
+       monument.id = id;
+       insert1.run(monument);
+       for(let j = 0; j < monument.region.length; j++) {
+-        insert2.run({recipe: id, rank: j, name: monument.region[j].name});
++        insert2.run({monument: id, rank: j, name: monument.region[j].name});
+       }
+       /*for(let j = 0; j < monument.stages.length; j++) {
+         insert3.run({recipe: id, rank: j, description: recipe.stages[j].description});
+@@ -41,7 +40,7 @@
+     }
+   });
+ 
+-  transaction(recipes);
++  transaction(monuments);
+ }
+ 
+ load('data.json');
