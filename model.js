@@ -15,6 +15,7 @@ exports.read = (id) => {
   }
 };
 
+
 exports.create = function(monument) {
   var id = db.prepare('INSERT INTO monument (name, img, city) VALUES (@name, @img, @city)').run(monument).lastInsertRowid;
 
