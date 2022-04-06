@@ -15,10 +15,11 @@ exports.read = (id) => {
   }
 };
 
-exports.create = function(monument) {
-  var id = db.prepare('INSERT INTO monument (title, img, description, duration) VALUES (@title, @img, @description, @duration)').run(recipe).lastInsertRowid;
 
-  var insert1 = db.prepare('INSERT INTO regions VALUES (@recipe, @rank, @name)');
+exports.create = function(monument) {
+  var id = db.prepare('INSERT INTO monument (name, img, city) VALUES (@name, @img, @city)').run(monument).lastInsertRowid;
+
+  var insert1 = db.prepare('INSERT INTO regions VALUES (@monument, @rank, @name)');
   //var insert2 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
 
   var transaction = db.transaction((monument) => {
@@ -40,8 +41,8 @@ exports.search = (query, page) => {
   query = query || "";
   page = parseInt(page || 1);
 
-  var num_found = db.prepare('SELECT count(*) FROM monument WHERE title LIKE ?').get('%' + query + '%')['count(*)'];
-  var results = db.prepare('SELECT id as entry, title, img FROM monument WHERE title LIKE ? ORDER BY id LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var num_found = db.prepare('SELECT count(*) FROM monument WHERE name LIKE ?').get('%' + query + '%')['count(*)'];
+  var results = db.prepare('SELECT id as entry, name, img FROM monument WHERE name LIKE ? ORDER BY id LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
 
   return {
     results: results,

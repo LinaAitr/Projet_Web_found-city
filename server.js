@@ -88,7 +88,7 @@ app.get('/new_user',(req,res)=>{
 /**** Routes pour modifier les données ****/
 
 // Fonction qui facilite la création d'une recette
-function post_data_to_recipe(req) {
+function post_data_to_monument(req) {
   return {
     title: req.body.title,
     description: req.body.description,
@@ -100,13 +100,13 @@ function post_data_to_recipe(req) {
 }
 
 app.post('/create', (req, res) => {
-  let id = model.create(post_data_to_recipe(req));
+  let id = model.create(post_data_to_monument(req));
   res.redirect('/read/' + id);
 });
 
 app.post('/update/:id', (req, res) => {
   let id = req.params.id;
-  model.update(id, post_data_to_recipe(req));
+  model.update(id, post_data_to_monument(req));
   res.redirect('/read/' + id);
 });
 
