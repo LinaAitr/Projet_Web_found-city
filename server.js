@@ -1,25 +1,20 @@
 "use strict"
-/* Serveur pour le site de recettes */
-var express = require('express');
-var mustache = require('mustache-express');
-var randomstring = require('randomstring');
+
+const express = require('express');
+const mustache = require('mustache-express');
+const randomstring = require('randomstring');
 const cookieSession = require('cookie-session');
 
-var model = require('./model');
-var app = express();
+const model = require('./model');
+const app = express();
 
-// parse form arguments in POST requests
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.engine('html', mustache());
 app.set('view engine', 'html');
 app.set('views', './views');
-
-
-///.........................................................................////
-
-
 
 
 function is_authenticated(req, res, next) {
@@ -31,7 +26,7 @@ function is_authenticated(req, res, next) {
 }
 
 function paramMustache(req, res, next) {
-  if (req.session.user != undefined){
+  if (req.session.user !== undefined){
     res.locals.authenticated = true;
     res.locals.name = req.session.user.name;
   }else {
@@ -47,8 +42,6 @@ secret: randomstring.generate(),
 
 app.use(paramMustache);
 
-
-//app.get('/route', middleware, (req, res) => ...);
 ///........................................................................////
 
 /**** Routes pour voir les pages du site ****/
@@ -60,13 +53,13 @@ app.get('/', (req, res) => {
 
 /* Retourne les résultats de la recherche à partir de la requête "query" */
 app.get('/search', (req, res) => {
-  var found = model.search(req.query.query, req.query.page);
+  let found = model.search(req.query.query, req.query.page);
   res.render('search', found);
 });
 
 /* Retourne le contenu d'une recette d'identifiant "id" */
 app.get('/read/:id', (req, res) => {
-  var entry = model.read(req.params.id);
+  let entry = model.read(req.params.id);
   res.render('read', entry);
 });
 
@@ -75,12 +68,12 @@ app.get('/create', is_authenticated, (req, res) => {
 });
 
 app.get('/update/:id', is_authenticated,(req, res) => {
-  var entry = model.read(req.params.id);
+  let entry = model.read(req.params.id);
   res.render('update', entry);
 });
 
 app.get('/delete/:id', is_authenticated, (req, res) => {
-  var entry = model.read(req.params.id);
+  let entry = model.read(req.params.id);
   res.render('delete', {id: req.params.id, title: entry.title});
 });
 
@@ -107,12 +100,12 @@ function post_data_to_recipe(req) {
 }
 
 app.post('/create', (req, res) => {
-  var id = model.create(post_data_to_recipe(req));
+  let id = model.create(post_data_to_recipe(req));
   res.redirect('/read/' + id);
 });
 
 app.post('/update/:id', (req, res) => {
-  var id = req.params.id;
+  let id = req.params.id;
   model.update(id, post_data_to_recipe(req));
   res.redirect('/read/' + id);
 });
