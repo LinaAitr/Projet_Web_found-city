@@ -9,6 +9,7 @@ let entries = JSON.parse(fs.readFileSync('data.json').toString());
 let load = function(filename) {
   const recipes = JSON.parse(fs.readFileSync(filename));
 
+
   //........................................
   db.prepare('DROP TABLE IF EXISTS user').run();
   db.prepare('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, password TEXT)').run();
