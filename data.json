@@ -1,0 +1,414 @@
+[
+
+    {
+        "name":"La Statue de la Libert\u00e9",
+        "latitude":"40.689249",
+        "longitude":"-74.0445"
+    },
+    {
+        "name":"Palais de L'\u00c9lys\u00e9e",
+        "latitude":"48.870416",
+        "longitude":"2.316754"
+    },
+    {
+        "name":"Op\u00e9ra National - Grand-Th\u00e9\u00e2tre",
+        "latitude":"44.842507",
+        "longitude":"-0.574178"
+    },
+    {
+        "name":"Basilique Saint-Michel",
+        "latitude":"44.834401",
+        "longitude":"-0.565021"
+    },
+    {
+        "name":"Citadelle du Chateau d'Ol\u00e9ron",
+        "latitude":"45.884732",
+        "longitude":"-1.189307"
+    },
+    {
+        "name":"Cath\u00e9drale Saint-Andr\u00e9 de Bordeaux",
+        "latitude":"44.837645",
+        "longitude":"-0.57767"
+    },
+    {
+        "name":"Chateau Pichon-Longueville",
+        "latitude":"45.176168",
+        "longitude":"-0.75236"
+    },
+    {
+        "name":"Ch\u00e2teau L\u00e9oville Poyferr\u00e9",
+        "latitude":"45.164058",
+        "longitude":"-0.74089"
+    },
+    {
+        "name":"Ch\u00e2teau Lascombes",
+        "latitude":"45.044431451",
+        "longitude":"-0.683126"
+    },
+    {
+        "name":"Ch\u00e2teau Giscours",
+        "latitude":"45.00891",
+        "longitude":"-0.646168"
+    },
+    {
+       	"name":"Ch\u00e2teau Margaux",
+        "latitude":"45.04443",
+        "longitude":"-0.668757"
+    },
+    {
+        "name":"Porte Cailhau",
+        "latitude":"44.838794",
+        "longitude":"-0.568481"
+    },
+    {   
+    	"name":"Fort M\u00e9doc",
+        "latitude":"45.111067",
+        "longitude":"-0.703063"
+    },
+    {
+        "name":"Arc de Germanicus",
+        "latitude":"45.745919",
+        "longitude":"-0.628883"
+    },
+    {
+        "name":"Home",
+        "latitude":"45.726542",
+        "longitude":"-0.667813"
+    },
+    {
+        "name":"Test",
+        "latitude":"0.123",
+        "longitude":"0.123"
+    },
+    {
+        "name":"Amphith\u00e9\u00e2tre Gallo-Romain",
+        "latitude":"45.7456243",
+        "longitude":"-0.6442028"
+    },
+    {
+        "name":"Corderie Royale",
+        "latitude":"45.939079",
+        "longitude":"-0.955977"
+    },
+    {
+        "name":"Tour Saint-Nicolas",
+        "latitude":"46.155761",
+        "longitude":"-1.153435"
+    },
+    {
+        "name":"Tour de la Chaine",
+        "latitude":"46.155796",
+        "longitude":"-1.154154"
+    },
+    {
+        "name":"Tour de la Lanterne",
+        "latitude":"46.155846",
+        "longitude":"-1.157102"
+    },
+    {
+        "name":"La Grosse Horloge",
+        "latitude":"46.158098",
+        "longitude":"-1.153631"
+    },
+    {
+        "name":"Od\u00e9on Th\u00e9atre de l'Europe",
+        "latitude":"48.849564",
+        "longitude":"2.338715"
+    },
+    {
+        "name":"Palais du Luxembourg",
+        "latitude":"48.848271",
+        "longitude":"2.337293"
+    },
+    {
+        "name":"Notre-Dame de Paris",
+        "latitude":"48.852968",
+        "longitude":"2.349902"
+    },
+    {
+        "name":"Pont Saint-Michel",
+        "latitude":"48.854079",
+        "longitude":"2.34464"
+    },
+    {
+        "name":"Pont Saint-Louis",
+        "latitude":"48.852763",
+        "longitude":"2.352705"
+    },
+    {
+        "name":"Pont Neuf",
+        "latitude":"48.85705",
+        "longitude":"2.341325"
+    },
+    {
+        "name":"Mus\u00e9e du Louvre",
+        "latitude":"48.860611",
+        "longitude":"2.337644"
+    },
+    {
+        "name":"Pyramide du Louvre",
+        "latitude":"48.861014",
+        "longitude":"2.335858"
+    },
+    {
+        "name":"La Pyramide Invers\u00e9e",
+        "latitude":"48.860856",
+        "longitude":"2.336145"
+    },
+    {
+        "name":"Le Pont Royal",
+        "latitude":"48.860085",
+        "longitude":"2.329745"
+    },
+    {
+        "name":"Mus\u00e9e d'Orsay",
+        "latitude":"48.859961",
+        "longitude":"2.326561"
+    },
+    {
+        "name":"Palais Bourbon",
+        "latitude":"48.861903",
+        "longitude":"2.318648"
+    },
+    {
+        "name":"Pont des Invalides",
+        "latitude":"48.863097",
+        "longitude":"2.3104"
+    },
+    {
+        "name":"Pont Alexandre III",
+        "latitude":"48.863899",
+        "longitude":"2.313559"
+    },
+    {
+        "name":"Petit Palais",
+        "latitude":"48.866048",
+        "longitude":"2.31459"
+    },
+    {
+        "name":"Grand Palais",
+        "latitude":"48.866109",
+        "longitude":"2.312454"
+    },
+    {
+        "name":"Panth\u00e9on",
+        "latitude":"48.846222",
+        "longitude":"2.346414"
+    },
+    {
+        "name":"Place Denfert-Rochereau",
+        "latitude":"48.8341441",
+        "longitude":"2.3326907"
+    },
+    {
+        "name":"Tour Eiffel",
+        "latitude":"48.85837",
+        "longitude":"2.294481"
+    },
+    {
+        "name":"Jardin du Trocad\u00e9ro",
+        "latitude":"48.861596",
+        "longitude":"2.289282"
+    },
+    {
+        "name":"Place de la Concorde",
+        "latitude":"48.865633",
+        "longitude":"2.321236"
+    },
+    {
+        "name":"Arc de Triomphe",
+        "latitude":"48.873792",
+        "longitude":"2.295028"
+    },
+    {
+        "name":"Mus\u00e9e Gr\u00e9vin",
+        "latitude":"48.871838",
+        "longitude":"2.34222"
+    },
+    {
+        "name":"H\u00f4tel des Invalides",
+        "latitude":"48.85832",
+        "longitude":"2.31288"
+    },
+    {
+        "name":"Mus\u00e9um national d'Histoire naturel",
+        "latitude":"48.844322",
+        "longitude":"2.356291"
+    },
+    {
+        "name":"Ar\u00e8nes de Lut\u00e8ce",
+        "latitude":"48.845116",
+        "longitude":"2.352837"
+    },
+    {
+        "name":"Tour Montparnasse",
+        "latitude":"48.842138",
+        "longitude":"2.321951"
+    },
+    {
+        "name":"Grande Arche de la D\u00e9fense",
+        "latitude":"48.892598",
+        "longitude":"2.236112"
+    },
+    {   
+    	"name":"Ch\u00e2teau de Versailles",
+        "latitude":"48.803222",
+        "longitude":"2.126411"
+    },
+    {
+        "name":"Basilique su Sacr\u00e9-Coeur",
+        "latitude":"48.886705",
+        "longitude":"2.343104"
+    },
+    {
+        "name":"Op\u00e9ra Garnier",
+        "latitude":"48.87197",
+        "longitude":"2.331601"
+    },
+    {
+        "name":"Cath\u00e9drale Notre-Dame de Reims",
+        "latitude":"49.253859",
+        "longitude":"4.034042"
+    },
+    {
+        "name":"Aquarium de La Rochelle",
+        "latitude":"46.153245",
+        "longitude":"-1.150601"
+    },
+    {
+        "name":"La Fontaine Sub\u00e9",
+        "latitude":"49.255118",
+        "longitude":"4.027216"
+    },
+    {
+        "name":"Halles du Boulingrin",
+        "latitude":"49.26038",
+        "longitude":"4.031752"
+    },
+    {
+        "name":"H\u00f4tel de Ville",
+        "latitude":"49.257971",
+        "longitude":"4.031742"
+    },
+    {
+        "name":"Basilique Sainte-Clotilde",
+        "latitude":"48.858369",
+        "longitude":"2.319211"
+    },
+    {
+        "name":"Palais du Tau",
+        "latitude":"49.25344",
+        "longitude":"4.03479"
+    },
+    {
+        "name":"Op\u00e9ra de Reims",
+        "latitude":"49.253862",
+        "longitude":"4.030776"
+    },
+    {
+        "name":"La Porte de Mars",
+        "latitude":"49.260596",
+        "longitude":"4.029986"
+    },
+    {
+        "name":"Place Royale",
+        "latitude":"49.255411",
+        "longitude":"4.0342868"
+    },
+    {
+        "name":"Mus\u00e9e-h\u00f4tel Le Vergeur",
+        "latitude":"49.257112",
+        "longitude":"4.034053"
+    },
+    {
+        "name":"Cath\u00e9drale Notre-Dame de Reims",
+        "latitude":"49.253999",
+        "longitude":"4.034392"
+    },
+    {
+        "name":"Cath\u00e9drale Notre-Dame de Reims",
+        "latitude":"49.253596",
+        "longitude":"4.033352"
+    },
+    {
+        "name":"Basilique Saint-Remi",
+        "latitude":"49.243151",
+        "longitude":"4.042057"
+    },
+    {
+        "name":"Basilique Notre-Dame du Port",
+        "latitude":"45.780609",
+        "longitude":"3.089595"
+    },
+    {
+        "name":"H\u00f4tel de Chazerat",
+        "latitude":"45.778529",
+        "longitude":"3.087956"
+    },
+    {
+        "name":"H\u00f4tel de Chazerat",
+        "latitude":"45.778529",
+        "longitude":"3.087956"
+    },
+    {
+        "name":"L'Op\u00e9ra Th\u00e9atre",
+        "latitude":"45.777393",
+        "longitude":"3.082635"
+    },
+    {
+        "name":"Cath\u00e9drale Notre-Dame de l'Assomption",
+        "latitude":"45.778729",
+        "longitude":"3.085743"
+    },
+    {
+        "name":"La Statue de Vercing\u00e9torix",
+        "latitude":"45.7765829",
+        "longitude":"3.0824705"
+    },
+    {
+        "name":"Fontaine d'Amboise",
+        "latitude":"45.780360",
+        "longitude":"3.085914"
+    },
+    {
+        "name":"Fontaine d'Amboise",
+        "latitude":"45.780360",
+        "longitude":"3.085914"
+    },
+    {
+        "name":"Le Vieux Port",
+        "latitude":"46.157792",
+        "longitude":"-1.152534"
+    },
+    {
+        "name":"Le Vieux Port",
+        "latitude":"46.157846",
+        "longitude":"-1.151375"
+    },
+    {
+        "name":"Le Vieux Port",
+        "latitude":"46.157465",
+        "longitude":"-1.151402"
+    },
+    {
+        "name":"Le Vieux Port",
+        "latitude":"46.157170",
+        "longitude":"-1.151702"
+    },
+    {
+        "name":"Le Vieux Port",
+        "latitude":"46.156532",
+        "longitude":"-1.152247"
+    },
+    {
+        "name":"Le Vieux Port",
+        "latitude":"46.156196",
+        "longitude":"-1.152682"
+    },
+    {
+        "name":"Maison Henri II",
+        "latitude":"46.160614",
+        "longitude":"-1.152927"
+    }
+
+]
