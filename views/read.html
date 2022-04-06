@@ -1,0 +1,31 @@
+{{> header}}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-3">{{title}}</h1>
+      <p>{{description}}</p>
+      <p class="fx-bold mb3">Durée : {{duration}}</p>
+      <p class="display-5">Ingrédients : </p>
+      <ul>
+        {{#ingredients}}
+          <li>{{name}}</li>
+        {{/ingredients}}
+      </ul>
+      <p class="display-5">Étapes : </p>
+      <ol>
+        {{#stages}}
+          <li>{{description}}</li>
+        {{/stages}}
+      </ol>
+    </div>
+    <div class="col d-flex flex-column">
+      <img class="img-fluid" src="{{img}}">
+      <div class='text-center'>
+        <a class="btn btn-light" href="/update/{{id}}">Modifier</a>
+        <a class="btn btn-light" href="/delete/{{id}}">Supprimer</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> footer}}
