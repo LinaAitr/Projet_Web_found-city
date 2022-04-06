@@ -81,8 +81,7 @@
         "latitude":"45.111067",
         "longitude":"-0.703063",
         "img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.medoc-atlantique.com%2Ffiches%2Ffort-medoc%2F&psig=AOvVaw3JK4TifK6l6xv9hwD4CxeZ&ust=1649336967487000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCLDstJPB__YCFQAAAAAdAAAAABAD",
-        "city":"Cussac-Fort-Médoc",
-
+        "city":"Cussac-Fort-Médoc"
     },
     {
         "name":"Arc de Germanicus",
@@ -94,302 +93,401 @@
     {
         "name":"Amphith\u00e9\u00e2tre Gallo-Romain",
         "latitude":"45.7456243",
-        "longitude":"-0.6442028"
+        "longitude":"-0.6442028",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/4/4d/Le_th%C3%A9%C3%A2tre_romain_Saint-Marcel_%28Indre%29.JPG",
+        "city":"Saintes"
     },
     {
         "name":"Corderie Royale",
         "latitude":"45.939079",
-        "longitude":"-0.955977"
+        "longitude":"-0.955977",
+        "img":"https://www.territoiredemotions.fr/assets/uploads/2018/07/GettyImages-183957752_Corderie-1280x640.jpg",
+        "city":"Rochefort"
     },
     {
         "name":"Tour Saint-Nicolas",
         "latitude":"46.155761",
-        "longitude":"-1.153435"
+        "longitude":"-1.153435",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e5/Tour_Saint-Nicolas.jpg",
+        "city":"La Rochelle"
     },
     {
         "name":"Tour de la Chaine",
         "latitude":"46.155796",
-        "longitude":"-1.154154"
+        "longitude":"-1.154154",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Tour_de_la_Cha%C3%AEne_0003.jpg/1200px-Tour_de_la_Cha%C3%AEne_0003.jpg",
+        "city":"La Rochelle"
     },
     {
         "name":"Tour de la Lanterne",
         "latitude":"46.155846",
-        "longitude":"-1.157102"
+        "longitude":"-1.157102",
+        "img":"https://files.structurae.net/files/photos/2018/la_rochelle/lro_tl1_tour_de_la_lanterne.jpg",
+        "city":"La Rochelle"
     },
     {
         "name":"La Grosse Horloge",
         "latitude":"46.158098",
-        "longitude":"-1.153631"
+        "longitude":"-1.153631",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/c/c3/LaRochelleTourHorloge.JPG",
+        "city":"La Rochelle"
     },
     {
         "name":"Od\u00e9on Th\u00e9atre de l'Europe",
         "latitude":"48.849564",
-        "longitude":"2.338715"
+        "longitude":"2.338715",
+        "img":"https://www.theatre-odeon.eu/media/odeon/6-1200px-the_a_tre_de_l_ode_on_-_facade_-_photo_thierry_depagne.jpg",
+        "city":"Paris"
     },
     {
         "name":"Palais du Luxembourg",
         "latitude":"48.848271",
-        "longitude":"2.337293"
+        "longitude":"2.337293",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Palais_du_Luxembourg%2C_South_View_%28Crop%29_20140116_1.jpg/1178px-Palais_du_Luxembourg%2C_South_View_%28Crop%29_20140116_1.jpg",
+        "city":"Paris"
     },
     {
         "name":"Notre-Dame de Paris",
         "latitude":"48.852968",
-        "longitude":"2.349902"
+        "longitude":"2.349902",
+        "img":"https://static.nationalgeographic.fr/files/styles/image_3200/public/Notre-Dame_west-facade.jpg?w=1900&h=2595",
+        "city":"Paris"
     },
     {
         "name":"Pont Saint-Michel",
         "latitude":"48.854079",
-        "longitude":"2.34464"
+        "longitude":"2.34464",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/3/3b/Pont_Saint-Michel_vu_du_Petit-Pont-closeup-20050628.jpg",
+        "city":"Paris"
     },
     {
         "name":"Pont Saint-Louis",
         "latitude":"48.852763",
-        "longitude":"2.352705"
+        "longitude":"2.352705",
+        "img":"http://www.paristoric.com/images/gmapfp/paris_4_pont_saint_louis.jpg",
+        "city":"Paris"
     },
     {
         "name":"Pont Neuf",
         "latitude":"48.85705",
-        "longitude":"2.341325"
+        "longitude":"2.341325",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e4/Pont_Neuf_Paris.jpg",
+        "city":"Paris"
     },
     {
         "name":"Mus\u00e9e du Louvre",
         "latitude":"48.860611",
-        "longitude":"2.337644"
-    },
-    {
-        "name":"Pyramide du Louvre",
-        "latitude":"48.861014",
-        "longitude":"2.335858"
-    },
-    {
-        "name":"La Pyramide Invers\u00e9e",
-        "latitude":"48.860856",
-        "longitude":"2.336145"
+        "longitude":"2.337644",
+        "img":"https://www.sortiraparis.com/images/80/66131/350528-le-musee-du-louvre-coeur-artistique-et-touristique-de-la-capitale.jpg",
+        "city":"Paris"
     },
     {
         "name":"Le Pont Royal",
         "latitude":"48.860085",
-        "longitude":"2.329745"
+        "longitude":"2.329745",
+        "img":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/f2/d2/0f/pont-royal.jpg?w=1200&h=-1&s=1",
+        "city":"Paris"
     },
     {
         "name":"Mus\u00e9e d'Orsay",
         "latitude":"48.859961",
-        "longitude":"2.326561"
+        "longitude":"2.326561",
+        "img":"https://www.sortiraparis.com/images/80/83517/421527-visuel-paris-musee-d-orsay.jpg",
+        "city":"Paris"
     },
     {
         "name":"Palais Bourbon",
         "latitude":"48.861903",
-        "longitude":"2.318648"
+        "longitude":"2.318648",
+        "img":"http://www.paristoric.com/images/gmapfp/paris_7_palais_bourbon.jpg",
+        "city":"Paris"
     },
     {
         "name":"Pont des Invalides",
         "latitude":"48.863097",
-        "longitude":"2.3104"
+        "longitude":"2.3104",
+        "img":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/7a/5b/c7/pont-des-invalides.jpg?w=1200&h=1200&s=1",
+        "city":"Paris"
     },
     {
         "name":"Pont Alexandre III",
         "latitude":"48.863899",
-        "longitude":"2.313559"
+        "longitude":"2.313559",
+        "img":"https://vivreparis.fr/wp-content/uploads/2019/07/Pont-Alexandre-III-Paris.jpg",
+        "city":"Paris"
     },
     {
         "name":"Petit Palais",
         "latitude":"48.866048",
-        "longitude":"2.31459"
+        "longitude":"2.31459",
+        "img":"https://www.sortiraparis.com/images/80/83517/556465-visuel-paris-petit-palais.jpg",
+        "city":"Paris"
     },
     {
         "name":"Grand Palais",
         "latitude":"48.866109",
-        "longitude":"2.312454"
+        "longitude":"2.312454",
+        "img":"https://www.sortiraparis.com/images/80/66131/349898-la-nef-est-a-vous-visite-exceptionnelle-de-la-nef-du-grand-palais.jpg",
+        "city":"Paris"
     },
     {
         "name":"Panth\u00e9on",
         "latitude":"48.846222",
-        "longitude":"2.346414"
+        "longitude":"2.346414",
+        "img":"https://www.sortiraparis.com/images/80/1467/515887-nuit-au-pantheon-2019-visites-nocturnes-du-monument-parisien-a-la-lampe-torche.jpg",
+        "city":"Paris"
     },
     {
         "name":"Place Denfert-Rochereau",
         "latitude":"48.8341441",
-        "longitude":"2.3326907"
+        "longitude":"2.3326907",
+        "img":"https://keewego.com/wp-content/uploads/2019/01/place-denfert-rochereau-medium.jpg",
+        "city":"Paris"
     },
     {
         "name":"Tour Eiffel",
         "latitude":"48.85837",
-        "longitude":"2.294481"
-    },
-    {
-        "name":"Jardin du Trocad\u00e9ro",
-        "latitude":"48.861596",
-        "longitude":"2.289282"
+        "longitude":"2.294481",
+        "img":"https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/12/01/node_211759/12172053/public/2020/12/01/B9725408053Z.1_20201201171349_000%2BGOJH5KD1P.1-0.jpg?itok=jpDc-LT31606841865",
+        "city":"Paris"
     },
     {
         "name":"Place de la Concorde",
         "latitude":"48.865633",
-        "longitude":"2.321236"
+        "longitude":"2.321236",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/5/56/Place_de_la_Concorde_Paris_02.jpg",
+        "city":"Paris"
     },
     {
         "name":"Arc de Triomphe",
         "latitude":"48.873792",
-        "longitude":"2.295028"
+        "longitude":"2.295028",
+        "img":"https://www.tout-paris.org/wp-content/uploads/2019/01/Arc-de-Triomphe-1052x675.jpg",
+        "city":"Paris"
     },
     {
         "name":"Mus\u00e9e Gr\u00e9vin",
         "latitude":"48.871838",
-        "longitude":"2.34222"
+        "longitude":"2.34222",
+        "img":"https://tlcvacances.fr/cms/uploads/thumbs/tlc_big_1604554-jpg.jpeg.jpg",
+        "city":"Paris"
     },
     {
         "name":"H\u00f4tel des Invalides",
         "latitude":"48.85832",
-        "longitude":"2.31288"
+        "longitude":"2.31288",
+        "img":"https://www.tout-paris.org/wp-content/uploads/2019/01/Eglise-H%C3%B4tel-des-Invalides.jpg",
+        "city":"Paris"
     },
     {
         "name":"Mus\u00e9um national d'Histoire naturel",
         "latitude":"48.844322",
-        "longitude":"2.356291"
+        "longitude":"2.356291",
+        "img":"https://images.lesindesradios.fr/radios/latina/importrk/news/original/5bebebe8eb0bd4.44300398.jpg",
+        "city":"Paris"
     },
     {
         "name":"Ar\u00e8nes de Lut\u00e8ce",
         "latitude":"48.845116",
-        "longitude":"2.352837"
+        "longitude":"2.352837",
+        "img":"https://vivreparis.fr/wp-content/uploads/2021/07/arene-de-lutece-paris.jpg",
+        "city":"Paris"
     },
     {
         "name":"Tour Montparnasse",
         "latitude":"48.842138",
-        "longitude":"2.321951"
+        "longitude":"2.321951",
+        "img":"https://upload.wikimedia.org/wikipedia/fr/thumb/9/90/Tour_Montparnasse_Mars_2021.jpeg/1200px-Tour_Montparnasse_Mars_2021.jpeg",
+        "city":"Paris"
     },
     {
         "name":"Grande Arche de la D\u00e9fense",
         "latitude":"48.892598",
-        "longitude":"2.236112"
+        "longitude":"2.236112",
+        "img":"https://media1.ledevoir.com/images_galerie/nwdp_220583_157120/image.jpg",
+        "city":"Paris"
     },
     {   
     	"name":"Ch\u00e2teau de Versailles",
         "latitude":"48.803222",
-        "longitude":"2.126411"
+        "longitude":"2.126411",
+        "img":"https://pbs.twimg.com/media/EzbKTbMXMAQF6sT?format=jpg&name=large",
+        "city":"Paris"
     },
     {
-        "name":"Basilique su Sacr\u00e9-Coeur",
+        "name":"Basilique du Sacr\u00e9-Coeur",
         "latitude":"48.886705",
-        "longitude":"2.343104"
+        "longitude":"2.343104",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/c/c5/Le_sacre_coeur.jpg",
+        "city":"Paris"
     },
     {
         "name":"Op\u00e9ra Garnier",
         "latitude":"48.87197",
-        "longitude":"2.331601"
+        "longitude":"2.331601",
+        "img":"https://img-4.linternaute.com/zSA7zLCdLwZy0ta0JghhHrf8XB4=/1500x/smart/5240cd5e781b4b27a28e1ceff4c39cf8/ccmcms-linternaute/17109480.jpg",
+        "city":"Paris"
     },
     {
         "name":"Cath\u00e9drale Notre-Dame de Reims",
         "latitude":"49.253859",
-        "longitude":"4.034042"
+        "longitude":"4.034042",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e1/Reims_Kathedrale.jpg",
+        "city":"Reims"
     },
     {
         "name":"Aquarium de La Rochelle",
         "latitude":"46.153245",
-        "longitude":"-1.150601"
+        "longitude":"-1.150601",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/9/99/Aquarium_de_La_Rochelle.JPG",
+        "city":"La Rochelle"
     },
     {
         "name":"La Fontaine Sub\u00e9",
         "latitude":"49.255118",
-        "longitude":"4.027216"
+        "longitude":"4.027216",
+        "img":"https://img-4.linternaute.com/7knK06cZh6ZG9Kn6wLKW2kh_I84=/1240x/smart/c40075edcb9144dbaeeddc089a25516b/ccmcms-linternaute/18659910.jpg",
+        "city":"Reims"
     },
     {
         "name":"Halles du Boulingrin",
         "latitude":"49.26038",
-        "longitude":"4.031752"
+        "longitude":"4.031752",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/d/d8/Reims_Halles_Boulingrin_04.JPG",
+        "city":"Reims"
     },
     {
-        "name":"H\u00f4tel de Ville",
+        "name":"H\u00f4tel de Ville de Reims",
         "latitude":"49.257971",
-        "longitude":"4.031742"
+        "longitude":"4.031742",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/H%C3%B4tel_de_Ville_de_Reims%2C_Southeast_View_20140306_1.jpg/1200px-H%C3%B4tel_de_Ville_de_Reims%2C_Southeast_View_20140306_1.jpg",
+        "city":"Reims"
     },
     {
         "name":"Basilique Sainte-Clotilde",
         "latitude":"48.858369",
-        "longitude":"2.319211"
+        "longitude":"2.319211",
+        "img":"https://files.structurae.net/files/photos/1/20110329/dsc02468.jpg",
+        "city":"Reims"
     },
     {
         "name":"Palais du Tau",
         "latitude":"49.25344",
-        "longitude":"4.03479"
+        "longitude":"4.03479",
+        "img":"https://cdt51.media.tourinsoft.eu/upload/tau-reims.jpg",
+        "city":"Reims"
     },
     {
         "name":"Op\u00e9ra de Reims",
         "latitude":"49.253862",
-        "longitude":"4.030776"
+        "longitude":"4.030776",
+        "img":"https://cdn.pariscityvision.com/library/image/5409.jpg",
+        "city":"Reims"
     },
     {
         "name":"La Porte de Mars",
         "latitude":"49.260596",
-        "longitude":"4.029986"
+        "longitude":"4.029986",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/9/98/Porte_Mars_01.jpg",
+        "city":"Reims"
     },
     {
         "name":"Place Royale",
         "latitude":"49.255411",
-        "longitude":"4.0342868"
+        "longitude":"4.0342868",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e7/Reims_-_Place_Royale.jpg",
+        "city":"Reims"
     },
     {
         "name":"Mus\u00e9e-h\u00f4tel Le Vergeur",
         "latitude":"49.257112",
-        "longitude":"4.034053"
+        "longitude":"4.034053",
+        "img":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/e5/6f/4e/hotel-le-vergeur-museum.jpg?w=1200&h=-1&s=1",
+        "city":"Reims"
     },
     {
         "name":"Cath\u00e9drale Notre-Dame de Reims",
         "latitude":"49.253999",
-        "longitude":"4.034392"
+        "longitude":"4.034392",
+        "img":"",
+        "city":""
     },
     {
         "name":"Cath\u00e9drale Notre-Dame de Reims",
         "latitude":"49.253596",
-        "longitude":"4.033352"
+        "longitude":"4.033352",
+        "img":"",
+        "city":""
     },
     {
         "name":"Basilique Saint-Remi",
         "latitude":"49.243151",
-        "longitude":"4.042057"
+        "longitude":"4.042057",
+        "img":"",
+        "city":""
     },
     {
         "name":"Basilique Notre-Dame du Port",
         "latitude":"45.780609",
-        "longitude":"3.089595"
+        "longitude":"3.089595",
+        "img":"",
+        "city":""
     },
     {
         "name":"H\u00f4tel de Chazerat",
         "latitude":"45.778529",
-        "longitude":"3.087956"
+        "longitude":"3.087956",
+        "img":"",
+        "city":""
     },
     {
         "name":"H\u00f4tel de Chazerat",
         "latitude":"45.778529",
-        "longitude":"3.087956"
+        "longitude":"3.087956",
+        "img":"",
+        "city":""
     },
     {
         "name":"L'Op\u00e9ra Th\u00e9atre",
         "latitude":"45.777393",
-        "longitude":"3.082635"
+        "longitude":"3.082635",
+        "img":"",
+        "city":""
     },
     {
         "name":"Cath\u00e9drale Notre-Dame de l'Assomption",
         "latitude":"45.778729",
-        "longitude":"3.085743"
+        "longitude":"3.085743",
+        "img":"",
+        "city":""
     },
     {
         "name":"La Statue de Vercing\u00e9torix",
         "latitude":"45.7765829",
-        "longitude":"3.0824705"
+        "longitude":"3.0824705",
+        "img":"",
+        "city":""
     },
     {
         "name":"Fontaine d'Amboise",
         "latitude":"45.780360",
-        "longitude":"3.085914"
+        "longitude":"3.085914",
+        "img":"",
+        "city":""
     },
     {
         "name":"Le Vieux Port",
         "latitude":"46.156196",
-        "longitude":"-1.152682"
+        "longitude":"-1.152682",
+        "img":"",
+        "city":""
     },
     {
         "name":"Maison Henri II",
         "latitude":"46.160614",
-        "longitude":"-1.152927"
+        "longitude":"-1.152927",
+        "img":"",
+        "city":""
     }
 
 ]
