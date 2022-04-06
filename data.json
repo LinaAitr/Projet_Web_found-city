@@ -409,43 +409,22 @@
         "name":"Cath\u00e9drale Notre-Dame de Reims",
         "latitude":"49.253999",
         "longitude":"4.034392",
-        "img":"",
-        "city":""
-    },
-    {
-        "name":"Cath\u00e9drale Notre-Dame de Reims",
-        "latitude":"49.253596",
-        "longitude":"4.033352",
-        "img":"",
-        "city":""
-    },
-    {
-        "name":"Basilique Saint-Remi",
-        "latitude":"49.243151",
-        "longitude":"4.042057",
-        "img":"",
-        "city":""
+        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e1/Reims_Kathedrale.jpg",
+        "city":"Reims"
     },
     {
         "name":"Basilique Notre-Dame du Port",
         "latitude":"45.780609",
         "longitude":"3.089595",
-        "img":"",
-        "city":""
+        "img":"https://www.lamontagne.fr/photoSRC/Gw--/visite-commentee-de-notre-dame-du-port_4870946.jpeg",
+        "city":"Clermont-Ferrand"
     },
     {
         "name":"H\u00f4tel de Chazerat",
         "latitude":"45.778529",
         "longitude":"3.087956",
-        "img":"",
-        "city":""
-    },
-    {
-        "name":"H\u00f4tel de Chazerat",
-        "latitude":"45.778529",
-        "longitude":"3.087956",
-        "img":"",
-        "city":""
+        "img":"https://upload.wikimedia.org/wikipedia/commons/6/6d/H%C3%B4tel_de_Chazerat_-_Cour_circulaire_-_Clermont-Ferrand_-_M%C3%A9diath%C3%A8que_de_l%27architecture_et_du_patrimoine_-_APMH00023341.jpg",
+        "city":"Clermont-Ferrand"
     },
     {
         "name":"L'Op\u00e9ra Th\u00e9atre",
