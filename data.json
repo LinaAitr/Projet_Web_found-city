@@ -430,43 +430,43 @@
         "name":"L'Op\u00e9ra Th\u00e9atre",
         "latitude":"45.777393",
         "longitude":"3.082635",
-        "img":"",
-        "city":""
+        "img":"https://www.7joursaclermont.fr/wp-content/uploads/2021/04/operaclermont_sandrine_chapuis-Clermont-Auv-Metropole_3-1280x720.jpg",
+        "city":"Clermont-Ferrand"
     },
     {
         "name":"Cath\u00e9drale Notre-Dame de l'Assomption",
         "latitude":"45.778729",
         "longitude":"3.085743",
-        "img":"",
-        "city":""
+        "img":"https://www.clermontauvergnetourisme.com/wp-content/uploads/external/4089222-1600x900.jpg",
+        "city":"Clermont-Ferrand"
     },
     {
         "name":"La Statue de Vercing\u00e9torix",
         "latitude":"45.7765829",
         "longitude":"3.0824705",
-        "img":"",
-        "city":""
+        "img":"https://cliophoto.clionautes.org/galleries/GEOGRAPHIE/FRANCE/Nord-Est/Bourgogne/la_statue_de_vercingetorix.JPG",
+        "city":"Clermont-Ferrand"
     },
     {
         "name":"Fontaine d'Amboise",
         "latitude":"45.780360",
         "longitude":"3.085914",
-        "img":"",
-        "city":""
+        "img":"https://www.clermontauvergnetourisme.com/wp-content/uploads/external/4093931-1600x900.jpg",
+        "city":"Clermont-Ferrand"
     },
     {
         "name":"Le Vieux Port",
         "latitude":"46.156196",
         "longitude":"-1.152682",
-        "img":"",
-        "city":""
+        "img":"https://www.marseille-tourisme.com/app/uploads/marseille-tourisme/2020/11/thumbs/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960.jpg",
+        "city":"Marseille"
     },
     {
         "name":"Maison Henri II",
         "latitude":"46.160614",
         "longitude":"-1.152927",
-        "img":"",
-        "city":""
+        "img":"https://www.patrimoine-histoire.fr/images/Patrimoine/LaRochelle/pMH2/LaroMHII01.JPG",
+        "city":"La Rochelle"
     }
 
 ]
