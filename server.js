@@ -63,10 +63,6 @@ app.get('/read/:id', (req, res) => {
   res.render('read', entry);
 });
 
-app.get('/create', is_authenticated, (req, res) => {
-  res.render('create');
-});
-
 app.get('/update/:id', is_authenticated,(req, res) => {
   let entry = model.read(req.params.id);
   res.render('update', entry);
@@ -99,10 +95,6 @@ function post_data_to_monument(req) {
   };
 }
 
-app.post('/create', (req, res) => {
-  let id = model.create(post_data_to_monument(req));
-  res.redirect('/read/' + id);
-});
 
 app.post('/update/:id', (req, res) => {
   let id = req.params.id;
