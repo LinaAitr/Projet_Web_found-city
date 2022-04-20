@@ -16,14 +16,17 @@ let load = function(filename) {
 
   db.prepare('DROP TABLE IF EXISTS monument').run();
   db.prepare('DROP TABLE IF EXISTS region').run();
+  //db.prepare('DROP TABLE IF EXISTS region').run();
   //db.prepare('DROP TABLE IF EXISTS stage').run();
 
   db.prepare('CREATE TABLE monument (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, img TEXT, city TEXT)').run();
   db.prepare('CREATE TABLE region (monument INT, rank INT, name TEXT)').run();
+  //db.prepare('CREATE TABLE region (monument INT, rank INT, name TEXT)').run();
   //db.prepare('CREATE TABLE stage (recipe INT, rank INT, description TEXT)').run();
 
   let insert1 = db.prepare('INSERT INTO monument VALUES (@id, @name, @img, @city)');
   let insert2 = db.prepare('INSERT INTO region VALUES (@monument, @rank, @name)');
+  //let insert2 = db.prepare('INSERT INTO region VALUES (@monument, @rank, @name)');
   //let insert3 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
 
   let transaction = db.transaction((monuments) => {
@@ -35,6 +38,9 @@ let load = function(filename) {
       for(let j = 0; j < monument.region.length; j++) {
         insert2.run({monument: id, rank: j, name: monument.region[j].name});
       }
+      // for(let j = 0; j < monument.region.length; j++) {
+      //   insert2.run({monument: id, rank: j, name: monument.region[j].name});
+      // }
       /*for(let j = 0; j < monument.stages.length; j++) {
         insert3.run({recipe: id, rank: j, description: recipe.stages[j].description});
       }*/
