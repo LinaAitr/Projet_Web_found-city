@@ -63,3 +63,8 @@ exports.new_user = function new_user(name, password){
   const newUser = db.prepare("INSERT INTO user(name, password) VALUES (@name, @password)").run({name, password});
   return newUser.id;
 }
+
+exports.add_favorite = function add_favorite(id_user, id_activity){
+  const fav = db.prepare('INSERT INTO favorite VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  return fav;
+}

@@ -29,6 +29,7 @@ function paramMustache(req, res, next) {
   if (req.session.user !== undefined){
     res.locals.authenticated = true;
     res.locals.name = req.session.user.name;
+    res.locals.id_user = req.session.user.id_user;
   }else {
     res.locals.authenticated = false;
     res.locals.name = null;
