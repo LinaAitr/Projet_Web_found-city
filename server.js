@@ -57,6 +57,12 @@ app.get('/search', (req, res) => {
   res.render('search', found);
 });
 
+
+app.get('/suggestion', (req, res) => {
+  let found = model.suggestion(req.query.page);
+  res.render('suggestion', found);
+});
+
 /* Retourne le contenu d'une recette d'identifiant "id" */
 app.get('/read/:id', (req, res) => {
   let entry = model.read(req.params.id);
