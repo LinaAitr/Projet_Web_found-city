@@ -62,35 +62,14 @@ exports.login = function login(name, password){
 exports.new_user = function new_user(name, password){
   const newUser = db.prepare("INSERT INTO user(name, password) VALUES (@name, @password)").run({name, password});
   return newUser.id;
-}
-//
-// exports.suggestion = function suggestion(page){
-//   const num_per_page = 12;
-//   query = "";
-//
-//   var random = db.prepare('SELECT * FROM monument ORDER BY RAND LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
-//
-//   return {
-//     random: random,
-//     query: query,
-//     page: page
-//   };
-exports.suggestion = (query, page) => {
-  const num_per_page = 32;
-  query = query || "";
-  page = parseInt(page || 1);
+};
 
-  var num_found = db.prepare('SELECT count(*) FROM monument WHERE name LIKE ?').get('%' + query + '%')['count(*)'];
-  var random = db.prepare('SELECT id as entry, name, img FROM monument WHERE name LIKE ? ORDER BY id LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
+exports.suggestion = function suggestion(page){
+  const num_per_page = 12;
+  var random = db.prepare('SELECT * FROM monument ORDER BY RANDOM() LIMIT ?').all(num_per_page);
 
   return {
     random: random,
-    num_found: num_found,
-    query: query,
-    next_page: page + 1,
-    page: page,
-    num_pages: parseInt(num_found / num_per_page) + 1,
+    page: page
   };
-};
-
-};
+}

@@ -48,7 +48,8 @@ app.use(paramMustache);
 
 /* Retourne une page principale avec le nombre de recettes */
 app.get('/', (req, res) => {
-  res.render('index');
+  let found = model.suggestion(req.query.page);
+  res.render('suggestion', found);
 });
 
 /* Retourne les résultats de la recherche à partir de la requête "query" */
@@ -57,11 +58,6 @@ app.get('/search', (req, res) => {
   res.render('search', found);
 });
 
-
-app.get('/suggestion', (req, res) => {
-  let found = model.suggestion(req.query.page);
-  res.render('suggestion', found);
-});
 
 /* Retourne le contenu d'une recette d'identifiant "id" */
 app.get('/read/:id', (req, res) => {
