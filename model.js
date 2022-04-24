@@ -64,7 +64,7 @@ exports.new_user = function new_user(name, password){
   return newUser.id;
 }
 
-exports.suggestion = function suggestion(page) => {
+exports.suggestion = function suggestion(page){
   const num_per_page = 10;
   query = "";
 
