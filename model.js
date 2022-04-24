@@ -65,17 +65,14 @@ exports.new_user = function new_user(name, password){
 }
 
 exports.suggestion = function suggestion(page){
-  const num_per_page = 10;
+  const num_per_page = 12;
   query = "";
 
   var random = db.prepare('SELECT * FROM monument ORDER BY RAND LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
 
   return {
-    results: results,
-    num_found: num_found,
+    random: random,
     query: query,
-    next_page: page + 1,
-    page: page,
-    num_pages: parseInt(num_found / num_per_page) + 1,
+    page: page
   };
 };
