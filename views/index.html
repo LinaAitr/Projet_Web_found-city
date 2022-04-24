@@ -1,6 +1,6 @@
 {{> header}}
 
-  <div class="p-5">
+  <!-- <div class="p-5">
 
     <div class="container-fluid bg-light pt-3 px-3 pb-5 rounded-3">
       <div class="d-flex justify-content-end">
@@ -18,6 +18,27 @@
         <img class="img-fluid mx-auto" src="https://www.campusfrance.org/sites/default/files/styles/mobile_visuel_principal_page/public/carte%20de%20france%20pictos.png?itok=c5KyZCbb">
       </div>
     </div>
-  </div>
+  </div> -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h1 class="mb-5">Voici quelque suggestions :</h1>
+      </div>
+    </div>
 
+    <div class="row">
+        {{#random}}
+        <div class="col-3 d-flex align-items-stretch mb-3">
+          <a class="btn btn-outline-dark" href="/read/{{entry}}">
+            <div>
+              <img class="img-fluid" src="{{img}}">
+              <div class="p-5">
+                  <p class="diplay-6">{{name}}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        {{/random}}
+    </div>
+  </div>
 {{> footer}}

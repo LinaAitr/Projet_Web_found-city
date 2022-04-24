@@ -19,7 +19,7 @@ let load = function(filename) {
   //db.prepare('DROP TABLE IF EXISTS stage').run();
 
   db.prepare('CREATE TABLE monument (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, img TEXT, city TEXT)').run();
-  db.prepare('CREATE TABLE location (monument INT, rank INT, name TEXT, city TEXT, latitude FLOAT, longitude FLOAT)').run();
+  db.prepare('CREATE TABLE location (monument INT, rank INT, city TEXT, latitude DOUBLE, longitude DOUBLE)').run();
 
   //db.prepare('CREATE TABLE stage (recipe INT, rank INT, description TEXT)').run();
 

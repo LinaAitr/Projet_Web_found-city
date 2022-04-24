@@ -1,0 +1,25 @@
+{{> header}}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h1 class="mb-5">Voici quelque suggestions :</h1>
+    </div>
+  </div>
+
+  <div class="row">
+      {{#random}}
+      <div class="col-3 d-flex align-items-stretch mb-3">
+        <a class="btn btn-outline-dark" href="/read/{{entry}}">
+          <div>
+            <img class="img-fluid" src="{{img}}">
+            <div class="p-5">
+                <p class="diplay-6">{{name}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {{/random}}
+  </div>
+</div>
+
+{{> footer}}
