@@ -52,7 +52,7 @@
         "name":"Ch\u00e2teau Lascombes",
         "latitude":"45.044431451",
         "longitude":"-0.683126",
-        "img":"https://avis-vin.lefigaro.fr/media/cache/page_100/var/src/79/19748-autre-chateau-lascombes-margaux.jpg",
+        "img":"https://www.and-digital.fr/uploads/Mask.jpg",
         "city":"Eysines"
     },
     {
@@ -108,7 +108,7 @@
         "name":"Tour Saint-Nicolas",
         "latitude":"46.155761",
         "longitude":"-1.153435",
-        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e5/Tour_Saint-Nicolas.jpg",
+        "img":"https://www.villa-l-olivier.com/medias/album/la-rochelle-tour-saint-nicolas-cmt17-s-morand-2.jpg",
         "city":"La Rochelle"
     },
     {
@@ -150,7 +150,7 @@
         "name":"Notre-Dame de Paris",
         "latitude":"48.852968",
         "longitude":"2.349902",
-        "img":"https://static.nationalgeographic.fr/files/styles/image_3200/public/Notre-Dame_west-facade.jpg?w=1900&h=2595",
+        "img":"https://img.20mn.fr/jlENriGpRyeEIBQTupGf9w/768x492_illustration-parvis-de-notre-dame-de-paris.jpg",
         "city":"Paris"
     },
     {
@@ -203,19 +203,13 @@
         "city":"Paris"
     },
     {
-        "name":"Pont des Invalides",
+        "name":"Pont des Invalides/Alexandre III",
         "latitude":"48.863097",
         "longitude":"2.3104",
         "img":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/7a/5b/c7/pont-des-invalides.jpg?w=1200&h=1200&s=1",
         "city":"Paris"
     },
-    {
-        "name":"Pont Alexandre III",
-        "latitude":"48.863899",
-        "longitude":"2.313559",
-        "img":"https://vivreparis.fr/wp-content/uploads/2019/07/Pont-Alexandre-III-Paris.jpg",
-        "city":"Paris"
-    },
+
     {
         "name":"Petit Palais",
         "latitude":"48.866048",
@@ -262,7 +256,7 @@
         "name":"Arc de Triomphe",
         "latitude":"48.873792",
         "longitude":"2.295028",
-        "img":"https://www.tout-paris.org/wp-content/uploads/2019/01/Arc-de-Triomphe-1052x675.jpg",
+        "img":"https://www.timographie360.fr/photos/realisations/principal/vignettes/visite-virtuelle-arc-triomphe_80.jpg",
         "city":"Paris"
     },
     {
@@ -276,7 +270,7 @@
         "name":"H\u00f4tel des Invalides",
         "latitude":"48.85832",
         "longitude":"2.31288",
-        "img":"https://www.tout-paris.org/wp-content/uploads/2019/01/Eglise-H%C3%B4tel-des-Invalides.jpg",
+        "img":"https://www.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_230/h%C3%B4tel-des-invalides-esplanade-%7C-630x405-%7C-%C2%A9-thinkstock/35967-1-fre-FR/H%C3%B4tel-des-Invalides-esplanade-%7C-630x405-%7C-%C2%A9-Thinkstock.jpg",
         "city":"Paris"
     },
     {
@@ -297,14 +291,14 @@
         "name":"Tour Montparnasse",
         "latitude":"48.842138",
         "longitude":"2.321951",
-        "img":"https://upload.wikimedia.org/wikipedia/fr/thumb/9/90/Tour_Montparnasse_Mars_2021.jpeg/1200px-Tour_Montparnasse_Mars_2021.jpeg",
+        "img":"https://vivreparis.fr/wp-content/uploads/2021/12/tour-montparnasse-hauteur.jpg",
         "city":"Paris"
     },
     {
         "name":"Grande Arche de la D\u00e9fense",
         "latitude":"48.892598",
         "longitude":"2.236112",
-        "img":"https://media1.ledevoir.com/images_galerie/nwdp_220583_157120/image.jpg",
+        "img":"https://www.lemoniteur.fr/mediatheque/9/4/0/000826049_520x330_c.jpg",
         "city":"Paris"
     },
     {
@@ -318,7 +312,7 @@
         "name":"Basilique du Sacr\u00e9-Coeur",
         "latitude":"48.886705",
         "longitude":"2.343104",
-        "img":"https://upload.wikimedia.org/wikipedia/commons/c/c5/Le_sacre_coeur.jpg",
+        "img":"https://www.nerienlouper.paris/wp-content/uploads/2017/04/basilique-sacre-soeur-montmartre.jpg",
         "city":"Paris"
     },
     {
@@ -332,7 +326,7 @@
         "name":"Cath\u00e9drale Notre-Dame de Reims",
         "latitude":"49.253859",
         "longitude":"4.034042",
-        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e1/Reims_Kathedrale.jpg",
+        "img":"https://cdn.pariscityvision.com/library/image/5408.jpg",
         "city":"Reims"
     },
     {
@@ -367,7 +361,7 @@
         "name":"Basilique Sainte-Clotilde",
         "latitude":"48.858369",
         "longitude":"2.319211",
-        "img":"https://files.structurae.net/files/photos/1/20110329/dsc02468.jpg",
+        "img":"https://st4.depositphotos.com/5903596/38030/i/600/depositphotos_380308080-stock-photo-basilica-of-saint-clotilde-basilique.jpg",
         "city":"Reims"
     },
     {
@@ -405,13 +399,7 @@
         "img":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/e5/6f/4e/hotel-le-vergeur-museum.jpg?w=1200&h=-1&s=1",
         "city":"Reims"
     },
-    {
-        "name":"Cath\u00e9drale Notre-Dame de Reims",
-        "latitude":"49.253999",
-        "longitude":"4.034392",
-        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e1/Reims_Kathedrale.jpg",
-        "city":"Reims"
-    },
+
     {
         "name":"Basilique Notre-Dame du Port",
         "latitude":"45.780609",
@@ -456,17 +444,39 @@
     },
     {
         "name":"Le Vieux Port",
-        "latitude":"46.156196",
-        "longitude":"-1.152682",
+        "latitude":"43,2840",
+        "longitude":"5,3715",
         "img":"https://www.marseille-tourisme.com/app/uploads/marseille-tourisme/2020/11/thumbs/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960.jpg",
         "city":"Marseille"
     },
+    {
+        "name":"Basilique Notre-Dame de la Garde",
+        "latitude":"46.156196",
+        "longitude":"-1.152682",
+        "img":"https://madeinmarseille.net/actualites-marseille/2020/05/notre-dame-garde-bonne-mere.jpg",
+        "city":"Marseille"
+    },
+
     {
         "name":"Maison Henri II",
         "latitude":"46.160614",
         "longitude":"-1.152927",
         "img":"https://www.patrimoine-histoire.fr/images/Patrimoine/LaRochelle/pMH2/LaroMHII01.JPG",
         "city":"La Rochelle"
+    },
+    {
+        "name":"La Saline Royale",
+        "latitude":"47.0334",
+        "longitude":"5.77747",
+        "img":"https://www.jura-tourism.com/wp-content/uploads/wpetourisme/geroges-fessy-2-290069.png",
+        "city":"Arc-et-Senans"
+    },
+    {
+        "name":"La Grande Saline",
+        "latitude":"46.9373",
+        "longitude":"5.8761",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/2/22/Saline_de_Salins-les-Bains_005.jpg",
+        "city":"Salins-les-Bains"
     }
 
 ]

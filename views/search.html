@@ -20,6 +20,13 @@
       </div>
       {{/results}}
   </div>
+  {{#previous_page}}
+  <div>
+    <div>
+      <a class="btn btn-outline-secondary" href="/search?query={{query}}&page={{previous_page}}">Page précédente</a>
+    </div>
+  </div>
+  {{/previous_page}}
 
   {{#next_page}}
   <div>

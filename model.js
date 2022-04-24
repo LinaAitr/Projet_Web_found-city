@@ -40,15 +40,31 @@ exports.search = (query, page) => {
   const num_per_page = 32;
   query = query || "";
   page = parseInt(page || 1);
+  var previous_page;
+  var next_page;
 
-  var num_found = db.prepare('SELECT count(*) FROM monument WHERE name LIKE ?').get('%' + query + '%')['count(*)'];
-  var results = db.prepare('SELECT id as entry, name, img FROM monument WHERE name LIKE ? ORDER BY id LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var num_found = db.prepare('SELECT count(*) FROM monument WHERE name LIKE ? OR city LIKE ?').get('%' + query + '%','%' + query + '%')['count(*)'];
+  var results = db.prepare('SELECT id as entry, name, img FROM monument WHERE name LIKE ? OR city LIKE ? ORDER BY id LIMIT ? OFFSET ?').all('%' + query + '%', '%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var num_pages = parseInt(num_found / num_per_page) + 1;
+  if (page==num_pages){
+    next_page = page;
+  }
+  else {
+    next_page = page+1;
+  }
+  if (page==0){
+    previous_page = page;
+  }
+  else {
+    previous_page = page-1;
+  }
 
   return {
     results: results,
     num_found: num_found,
     query: query,
-    next_page: page + 1,
+    previous_page: previous_page,
+    next_page: next_page,
     page: page,
     num_pages: parseInt(num_found / num_per_page) + 1,
   };
