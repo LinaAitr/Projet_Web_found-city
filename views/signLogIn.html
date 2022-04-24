@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,7 +11,7 @@
   <body>
     <div class="container p-5">
       <div class="row">
-        <form class="bg-dark text-white d-flex flex-column px-3 pt-5 pb-3 col-6 offset-3 rounded-3" action="/new_user" method="POST">
+        <form class="bg-dark text-white d-flex flex-column px-3 pt-5 pb-3 col-6 offset-3 rounded-3" action="/login" method="POST">
           <div class="mb-3">
             <label class="fw-bold"> Nom : </label>
             <input class="form-control" type="text" name="name"></br>
@@ -19,12 +20,10 @@
             <label class="fw-bold"> Mot de passe : </label>
             <input class="form-control" type="password" name="password"> </br>
           </div>
-          <button class="btn btn-primary mt-3" type="submit"> S'inscrire </button>
+          <button class="btn btn-primary mt-3" type="submit"> Se connecter </button>
         </form>
-        <a class=" d-flex flex-column px-3 col-6 offset-3 " href="/login">
-            <button class="btn btn-outline-success" type="submit"> Se connecter </button>
-        </a>
+
+      </div>
     </div>
   </body>
 </html>
- 
