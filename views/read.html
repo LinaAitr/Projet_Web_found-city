@@ -5,12 +5,8 @@
       <h1 class="display-3">{{title}}</h1>
       <p>{{description}}</p>
       <p class="fx-bold mb3">Durée : {{duration}}</p>
-      <p class="display-5">Ingrédients : </p>
-      <ul>
-        {{#ingredients}}
-          <li>{{name}}</li>
-        {{/ingredients}}
-      </ul>
+      <button type="button" name="button" onclick="add_fav({{id_user}},{{id}})"> <3 </button>
+
       <p class="display-5">Étapes : </p>
       <ol>
         {{#stages}}
@@ -27,5 +23,12 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function add_fav(id_user, id_activity){
+    model.exports.add_favorite(id_user, id_activity)
+  }
+
+</script>
 
 {{> footer}}

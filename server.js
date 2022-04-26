@@ -33,6 +33,7 @@ function paramMustache(req, res, next) {
   }else {
     res.locals.authenticated = false;
     res.locals.name = null;
+    res.locals.id_user = null;
   }
   next();
 }
@@ -91,7 +92,7 @@ function post_data_to_monument(req) {
     description: req.body.description,
     img: req.body.img,
     duration: req.body.duration,
-    ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
+    //ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
     stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
   };
 }
