@@ -81,7 +81,7 @@ exports.new_user = function new_user(name, password){
 };
 
 exports.suggestion = function suggestion(page){
-  const num_per_page = 2;
+  const num_per_page = 4;
   var random = db.prepare('SELECT * FROM monument ORDER BY RANDOM() LIMIT ?').all(num_per_page);
 
   return {
