@@ -16,23 +16,22 @@ exports.read = (id) => {
   }
 };
 
+exports.create = function(activity) {
+  var id = db.prepare('INSERT INTO activity (name, img, city) VALUES (@name, @img, @city)').run(activity).lastInsertRowid;
 
-exports.create = function(monument) {
-  var id = db.prepare('INSERT INTO activity (name, img, city) VALUES (@name, @img, @city)').run(monument).lastInsertRowid;
-
-  //var insert1 = db.prepare('INSERT INTO regions VALUES (@monument, @rank, @name)');
+  var insert1 = db.prepare('INSERT INTO regions VALUES (@activity, @rank, @name)');
   //var insert2 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
 
-  var transaction = db.transaction((monument) => {
-    for(let j = 0; j < monument.region.length; j++) {
-      insert1.run({monument: id, rank: j, name: monument.region[j].name});
+  var transaction = db.transaction((activity) => {
+    for(let j = 0; j < activity.region.length; j++) {
+      insert1.run({activity: id, rank: j, name: activity.region[j].name});
     }
     // for(var j = 0; j < recipe.stages.length; j++) {
     //   insert2.run({recipe: id, rank: j, description: recipe.stages[j].description});
     // }
   });
 
-  transaction(monument);
+  transaction(activity);
   return id;
 }
 
@@ -41,19 +40,36 @@ exports.search = (query, page) => {
   const num_per_page = 32;
   query = query || "";
   page = parseInt(page || 1);
+  var previous_page;
+  var next_page;
 
-  var num_found = db.prepare('SELECT count(*) FROM activity WHERE name LIKE ?').get('%' + query + '%')['count(*)'];
-  var results = db.prepare('SELECT id_activity as entry, name, img FROM activity WHERE name LIKE ? ORDER BY id_activity LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var num_found = db.prepare('SELECT count(*) FROM activity WHERE name LIKE ? OR city LIKE ?').get('%' + query + '%','%' + query + '%')['count(*)'];
+  var results = db.prepare('SELECT id_activity as entry, name, img FROM activity WHERE name LIKE ? OR city LIKE ? ORDER BY id_activity LIMIT ? OFFSET ?').all('%' + query + '%', '%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var num_pages = parseInt(num_found / num_per_page) + 1;
+  if (page==num_pages){
+    next_page = page;
+  }
+  else {
+    next_page = page+1;
+  }
+  if (page==0){
+    previous_page = page;
+  }
+  else {
+    previous_page = page-1;
+  }
 
   return {
     results: results,
     num_found: num_found,
     query: query,
-    next_page: page + 1,
+    previous_page: previous_page,
+    next_page: next_page,
     page: page,
     num_pages: parseInt(num_found / num_per_page) + 1,
   };
 };
+
 
 exports.login = function login(name, password){
  const user = db.prepare('SELECT id_user FROM user WHERE name=? and password=?').get(name, password);
