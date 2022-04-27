@@ -50,7 +50,7 @@ app.use(paramMustache);
 
 /* Retourne une page principale avec le nombre de recettes */
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('suggestion');
 });
 
 /* Retourne les résultats de la recherche à partir de la requête "query" */
