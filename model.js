@@ -5,9 +5,10 @@ const Sqlite = require('better-sqlite3');
 let db = new Sqlite('db.sqlite');
 
 exports.read = (id) => {
-  let found = db.prepare('SELECT * FROM monument WHERE id = ?').get(id);
+  let found = db.prepare('SELECT * FROM activity WHERE id_activity = ?').get(id);
   if(found !== undefined) {
     found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
+    //found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
     //found.stages = db.prepare('SELECT description FROM stage WHERE recipe = ? ORDER BY rank').all(id);
     return found;
   } else {
@@ -17,9 +18,9 @@ exports.read = (id) => {
 
 
 exports.create = function(monument) {
-  var id = db.prepare('INSERT INTO monument (name, img, city) VALUES (@name, @img, @city)').run(monument).lastInsertRowid;
+  var id = db.prepare('INSERT INTO activity (name, img, city) VALUES (@name, @img, @city)').run(monument).lastInsertRowid;
 
-  var insert1 = db.prepare('INSERT INTO regions VALUES (@monument, @rank, @name)');
+  //var insert1 = db.prepare('INSERT INTO regions VALUES (@monument, @rank, @name)');
   //var insert2 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
 
   var transaction = db.transaction((monument) => {
@@ -41,8 +42,8 @@ exports.search = (query, page) => {
   query = query || "";
   page = parseInt(page || 1);
 
-  var num_found = db.prepare('SELECT count(*) FROM monument WHERE name LIKE ?').get('%' + query + '%')['count(*)'];
-  var results = db.prepare('SELECT id as entry, name, img FROM monument WHERE name LIKE ? ORDER BY id LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var num_found = db.prepare('SELECT count(*) FROM activity WHERE name LIKE ?').get('%' + query + '%')['count(*)'];
+  var results = db.prepare('SELECT id_activity as entry, name, img FROM activity WHERE name LIKE ? ORDER BY id_activity LIMIT ? OFFSET ?').all('%' + query + '%', num_per_page, (page - 1) * num_per_page);
 
   return {
     results: results,
@@ -55,11 +56,16 @@ exports.search = (query, page) => {
 };
 
 exports.login = function login(name, password){
- const user = db.prepare('SELECT id FROM user WHERE name=? and password=?').get(name, password);
- return user ? user.id : -1;
+ const user = db.prepare('SELECT id_user FROM user WHERE name=? and password=?').get(name, password);
+ return user ? user.id_user : -1;
 }
 
 exports.new_user = function new_user(name, password){
   const newUser = db.prepare("INSERT INTO user(name, password) VALUES (@name, @password)").run({name, password});
-  return newUser.id;
+  return newUser.id_user;
+}
+
+exports.add_favorite = function add_favorite(id_user, id_activity){
+  const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  return fav;
 }
