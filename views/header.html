@@ -17,6 +17,18 @@
           </ul>
         </div>
 
+      {{^authenticated}}
+        <div class="">
+          <a href="/login">
+            <button type="submit" name="button">Se connecter</button>
+          </a>
+          <a href="/new_user">
+            <button type="submit" name="button">Se deconnecter</button>
+          </a>
+
+        </div>
+      {{/authenticated}}
+
       {{#authenticated}}
       <div class="d-flex align-items-center">
         <p class="m-0">{{name}}</p>
