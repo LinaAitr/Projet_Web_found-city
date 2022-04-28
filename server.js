@@ -85,18 +85,18 @@ app.get('/new_user',(req,res)=>{
 
 /**** Routes pour modifier les données ****/
 
-// Fonction qui facilite la création d'une recette
-function post_data_to_monument(req) {
-  return {
-    title: req.body.title,
-    description: req.body.description,
-    img: req.body.img,
-    duration: req.body.duration,
-    ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
-    stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
-  };
-}
-
+// // Fonction qui facilite la création d'une recette
+// function post_data_to_monument(req) {
+//   return {
+//     title: req.body.title,
+//     description: req.body.description,
+//     img: req.body.img,
+//     duration: req.body.duration,
+//     ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
+//     stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
+//   };
+// }
+//
 
 app.post('/update/:id', (req, res) => {
   let id = req.params.id;

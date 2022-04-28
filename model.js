@@ -7,7 +7,7 @@ let db = new Sqlite('db.sqlite');
 exports.read = (id_activity) => {
   let found = db.prepare('SELECT * FROM activity WHERE id_activity = ?').get(id_activity);
   if(found !== undefined) {
-    found.region = db.prepare('SELECT name FROM region WHERE activity = ? ORDER BY rank').all(id_user);
+    found.location = db.prepare('SELECT name FROM location WHERE activity = ? ORDER BY rank').all(id_user);
     //found.stages = db.prepare('SELECT description FROM stage WHERE recipe = ? ORDER BY rank').all(id);
     return found;
   } else {
@@ -16,24 +16,24 @@ exports.read = (id_activity) => {
 };
 
 
-exports.create = function(activity) {
-  var id_activity = db.prepare('INSERT INTO activity (name, img, city) VALUES (@name, @img, @city)').run(activity).lastInsertRowid;
-
-  var insert1 = db.prepare('INSERT INTO regions VALUES (@activity, @rank, @name)');
-  //var insert2 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
-
-  var transaction = db.transaction((activity) => {
-    for(let j = 0; j < activity.region.length; j++) {
-      insert1.run({activity: id_activity, rank: j, name: activity.region[j].name});
-    }
-    // for(var j = 0; j < recipe.stages.length; j++) {
-    //   insert2.run({recipe: id, rank: j, description: recipe.stages[j].description});
-    // }
-  });
-
-  transaction(activity);
-  return id_activity;
-}
+// exports.create = function(activity) {
+//   var id_activity = db.prepare('INSERT INTO activity (name, img, city) VALUES (@name, @img, @city)').run(activity).lastInsertRowid;
+//
+//   var insert1 = db.prepare('INSERT INTO location VALUES (@activity, @rank, @name)');
+//   //var insert2 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
+//
+//   var transaction = db.transaction((activity) => {
+//     for(let j = 0; j < activity.location.length; j++) {
+//       insert1.run({activity: id_activity, rank: j, name: activity.location[j].name});
+//     }
+//     // for(var j = 0; j < recipe.stages.length; j++) {
+//     //   insert2.run({recipe: id, rank: j, description: recipe.stages[j].description});
+//     // }
+//   });
+//
+//   transaction(activity);
+//   return id_activity;
+// }
 
 
 exports.search = (query, page) => {
