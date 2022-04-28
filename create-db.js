@@ -12,7 +12,7 @@ let load = function(filename) {
 
   //........................................
   db.prepare('DROP TABLE IF EXISTS user').run();
-  db.prepare('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, password TEXT)').run();
+  db.prepare('CREATE TABLE user (id_user INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, password TEXT)').run();
 
   db.prepare('DROP TABLE IF EXISTS activity').run();
   db.prepare('DROP TABLE IF EXISTS location').run();
