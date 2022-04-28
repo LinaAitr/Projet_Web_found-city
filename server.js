@@ -60,19 +60,19 @@ app.get('/search', (req, res) => {
 });
 
 /* Retourne le contenu d'une recette d'identifiant "id" */
-app.get('/read/:id', (req, res) => {
+app.get('/read/:id_activity', (req, res) => {
   let entry = model.read(req.params.id);
   res.render('read', entry);
 });
 
-app.get('/update/:id', is_authenticated,(req, res) => {
+app.get('/update/:id_activity', is_authenticated,(req, res) => {
   let entry = model.read(req.params.id);
   res.render('update', entry);
 });
 
-app.get('/delete/:id', is_authenticated, (req, res) => {
-  let entry = model.read(req.params.id);
-  res.render('delete', {id: req.params.id, title: entry.title});
+app.get('/delete/:id_activity', is_authenticated, (req, res) => {
+  let entry = model.read(req.params.id_activity);
+  res.render('delete', {id: req.params.id_activity, title: entry.title});
 });
 
 app.get('/login',(req,res)=>{
@@ -98,21 +98,21 @@ function post_data_to_monument(req) {
 }
 
 
-app.post('/update/:id', (req, res) => {
-  let id = req.params.id;
+app.post('/update/:id_activity', (req, res) => {
+  let id_activity = req.params.id_activity;
   model.update(id, post_data_to_monument(req));
-  res.redirect('/read/' + id);
+  res.redirect('/read/' + id_activity);
 });
 
-app.post('/delete/:id', (req, res) => {
-  model.delete(req.params.id);
+app.post('/delete/:id_activity', (req, res) => {
+  model.delete(req.params.id_activity);
   res.redirect('/');
 });
 
 app.post('/login', (req, res)=>{
-    const id = model.login(req.body.name, req.body.password);
-    if (id >-1){
-      req.session.user = {id, name : req.body.name};
+    const id_user = model.login(req.body.name, req.body.password);
+    if (id_user >-1){
+      req.session.user = {id_user, name : req.body.name};
       res.redirect('/');
     }
     else {
@@ -126,8 +126,8 @@ app.post('/logout',(req, res)=> {
 });
 
 app.post('/new_user', (req, res)=>{
-  const id = model.new_user(req.body.name, req.body.password);
-  req.session.user = {id, name : req.body.name};
+  const id_user = model.new_user(req.body.name, req.body.password);
+  req.session.user = {id_user, name : req.body.name};
   res.redirect('/');
 });
 
