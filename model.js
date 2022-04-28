@@ -85,3 +85,13 @@ exports.add_favorite = function add_favorite(id_user, id_activity){
   const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
   return fav;
 }
+
+exports.suggestion = function suggestion(page){
+  const num_per_page = 4;
+  var random = db.prepare('SELECT * FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
+
+  return {
+    random: random,
+    page: page
+  };
+}
