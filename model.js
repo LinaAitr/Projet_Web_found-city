@@ -4,10 +4,10 @@ const Sqlite = require('better-sqlite3');
 
 let db = new Sqlite('db.sqlite');
 
-exports.read = (id) => {
-  let found = db.prepare('SELECT * FROM monument WHERE id = ?').get(id);
+exports.read = (id_activity) => {
+  let found = db.prepare('SELECT * FROM activity WHERE id_activity = ?').get(id_activity);
   if(found !== undefined) {
-    found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
+    found.region = db.prepare('SELECT name FROM region WHERE activity = ? ORDER BY rank').all(id);
     //found.stages = db.prepare('SELECT description FROM stage WHERE recipe = ? ORDER BY rank').all(id);
     return found;
   } else {
@@ -24,7 +24,7 @@ exports.create = function(activity) {
 
   var transaction = db.transaction((activity) => {
     for(let j = 0; j < activity.region.length; j++) {
-      insert1.run({activity: id, rank: j, name: activity.region[j].name});
+      insert1.run({activity: id_activity, rank: j, name: activity.region[j].name});
     }
     // for(var j = 0; j < recipe.stages.length; j++) {
     //   insert2.run({recipe: id, rank: j, description: recipe.stages[j].description});
@@ -32,7 +32,7 @@ exports.create = function(activity) {
   });
 
   transaction(activity);
-  return id;
+  return id_activity;
 }
 
 
