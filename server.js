@@ -60,8 +60,8 @@ app.get('/search', (req, res) => {
 
 
 /* Retourne le contenu d'une recette d'identifiant "id" */
-app.get('/read/:id', (req, res) => {
-  let entry = model.read(req.params.id);
+app.get('/read/:id_activity', (req, res) => {
+  let entry = model.read(req.params.id_activity);
   res.render('read', entry);
 });
 
