@@ -27,17 +27,17 @@ let create_tables = function() {
 }
 
 let load = function(filename) {
-  const monuments = JSON.parse(fs.readFileSync(filename));
+  const activity = JSON.parse(fs.readFileSync(filename));
 
   let insert1 = db.prepare('INSERT INTO activity VALUES (@id_activity, @name, @img, @city, @type)');
   //let insert2 = db.prepare('INSERT INTO location VALUES (@id_location, @rank, @city, @latitude, @longitude)');
   //let insert3 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
 
-  let transaction = db.transaction((monuments) => {
+  let transaction = db.transaction((activity) => {
 
-    for(let id = 0; id < monuments.length; id++) {
-      let monument = monuments[id];
-      insert1.run({id_activity: id, name: monument.name, img: monument.img, city: monument.city, type: "monument"});
+    for(let id = 0; id < activity.length; id++) {
+      let activity = activity[id];
+      insert1.run({id_activity: id, name: activity.name, img: activity.img, city: activity.city, type: "activity"});
       /*for(let j = 0; j < monument.location.length; j++) {
         insert2.run({monument: id, rank: j, name: monument.location[j].name});
       }*/
@@ -48,7 +48,7 @@ let load = function(filename) {
     }
   });
 
-  transaction(monuments);
+  transaction(activity);
 }
 
 create_tables();
