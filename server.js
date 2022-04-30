@@ -83,7 +83,11 @@ app.get('/login',(req,res)=>{
 app.get('/new_user',(req,res)=>{
   res.render('new_user');
 });
-
+///FAVORITE !!!!
+app.get('/favorites',(req,res)=>{
+  res.render('favorites');
+});
+////
 /**** Routes pour modifier les données ****/
 
 // Fonction qui facilite la création d'une recette
