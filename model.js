@@ -61,18 +61,32 @@ exports.login = function login(name, password){
 }
 
 exports.new_user = function new_user(name, password){
-  const newUser = db.prepare("INSERT INTO user(name, password) VALUES (@name, @password)").run({name, password});
+  let found = db.prepare('SELECT id_user FROM user WHERE name=? and password=?').get(name, password);
+  if(found !== undefined) {
+    const newUser = db.prepare('SELECT id_user FROM user WHERE name=? and password=?').get(name, password);
+  } else {
+    const newUser = db.prepare("INSERT INTO user(name, password) VALUES (@name, @password)").run({name, password});
+  }
   return newUser.id_user;
 }
 
 exports.add_favorite = function add_favorite(id_user, id_activity){
-  const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
-  return fav;
+  db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
 }
 
 exports.delete_favorite = function delete_favorite(id_user, id_activity){
-  const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
-  return fav;
+  db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+}
+
+exports.is_favorite = function is_favorite(id_user, id_activity){
+  if (db.prepare('SELECT FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity).exist){
+    let isFav = true;
+  }else {
+    let isFav = false;
+  }
+  return {
+    isFav : isFav
+  };
 }
 
 exports.suggestion = function suggestion(){

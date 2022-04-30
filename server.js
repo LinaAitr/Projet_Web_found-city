@@ -60,7 +60,7 @@ app.get('/search', (req, res) => {
 
 /* Retourne le contenu d'une recette d'identifiant "id" */
 app.get('/read/:id_activity', (req, res) => {
-  let entry = model.read(req.params.id);
+  let entry = model.read(req.params.id_activity);
   res.render('read', entry);
 });
 
@@ -69,10 +69,6 @@ app.get('/update/:id_activity', is_authenticated,(req, res) => {
   res.render('update', entry);
 });
 
-app.get('/delete/:id_activity', is_authenticated, (req, res) => {
-  let entry = model.read(req.params.id_activity);
-  res.render('delete', {id: req.params.id_activity, title: entry.title});
-});
 
 app.get('/login',(req,res)=>{
   res.render('login');
@@ -86,28 +82,28 @@ app.get('/favorites',(req,res)=>{
   res.render('favorites');
 });
 
-app.get("/addFavorite/:id_activity/:coeur", is_authenticated, (req,res) => {
-  let results;
-
-  if (req.params.coeur == "♥") {
-    model.add_favorite(user, req.params.id_activity);
-    let result = {activity : req.params.id_activity}
-    results = {
-      result : result,
-      coeur : '❤️'
-      //display : "Activity :"
-    }
-  }
-  else if (req.params.coeur == "❤️") {
-    model.delete_favorite(user, req.params.id_activity);
-    let result = {activity : req.params.id_activity}
-    results = {
-      result : result,
-      coeur : '♥'
-      //display : "Activity :"
-    };
-  }
-});
+// app.get("/addFavorite/:id_activity/:coeur", is_authenticated, (req,res) => {
+//   let results;
+//
+//   if (req.params.coeur == "♥") {
+//     model.add_favorite(user, req.params.id_activity);
+//     let result = {activity : req.params.id_activity}
+//     results = {
+//       result : result,
+//       coeur : '❤️'
+//       //display : "Activity :"
+//     }
+//   }
+//   else if (req.params.coeur == "❤️") {
+//     model.delete_favorite(user, req.params.id_activity);
+//     let result = {activity : req.params.id_activity}
+//     results = {
+//       result : result,
+//       coeur : '♥'
+//       //display : "Activity :"
+//     };
+//   }
+// });
 
 /**** Routes pour modifier les données ****/
 
@@ -119,8 +115,13 @@ app.post('/update/:id_activity', (req, res) => {
   res.redirect('/read/' + id_activity);
 });
 
-app.post('/delete/:id_activity', (req, res) => {
-  model.delete(req.params.id_activity);
+app.post('/add_favorite/:id_activity', (req, res) => {
+  model.add_favorite(req.params.id_user,req.params.id_activity);
+  res.redirect('/');
+});
+
+app.post('/delete_favorite/:id_activity', (req, res) => {
+  model.delete_favorite(req.params.id_user,req.params.id_activity);
   res.redirect('/');
 });
 

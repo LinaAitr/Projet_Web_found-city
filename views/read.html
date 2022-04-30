@@ -10,11 +10,18 @@
     <div class="col d-flex flex-column">
       <img class="img-fluid" src="{{img}}">
     </div>
-
-
-      <form class="" action="/addFavorites/{{id_activity}}/{{coeur}}" method="get">
-        <button type="submit"> {{coeur}} </button>
+    {{#authenticated}}
+      {{^isFav}}
+        <form action="/add_favorite/{{id_user}},{{idactivity}}" method="post">
+          <button type="submit"> addFav </button>
+        </form>
+      {{/isFav}}
+      {{#isFav}}
+      <form action="/delete_favorite" method="post">
+        <button type="submit"> delFav </button>
       </form>
+      {{/isFav}}
+    {{/authenticated}}
 
     </div>
   </div>
