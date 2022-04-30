@@ -6,6 +6,7 @@ const Sqlite = require('better-sqlite3');
 let db = new Sqlite('db.sqlite');
 
 let entries = JSON.parse(fs.readFileSync('data.json').toString());
+//Pourquoi un fonction create_table et pas juste load comme dans tp 8 ??
 let create_tables = function() {
   db.prepare('DROP TABLE IF EXISTS favorite').run()
 
@@ -28,7 +29,6 @@ let create_tables = function() {
 
 let load = function(filename) {
   const monuments = JSON.parse(fs.readFileSync(filename));
-
   let insert1 = db.prepare('INSERT INTO activity VALUES (@id_activity, @name, @img, @city, @type)');
   //let insert2 = db.prepare('INSERT INTO location VALUES (@id_location, @rank, @city, @latitude, @longitude)');
   //let insert3 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');

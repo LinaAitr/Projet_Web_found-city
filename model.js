@@ -7,7 +7,7 @@ let db = new Sqlite('db.sqlite');
 exports.read = (id) => {
   let found = db.prepare('SELECT * FROM activity WHERE id_activity = ?').get(id);
   if(found !== undefined) {
-    found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
+    //found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
     //found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
     //found.stages = db.prepare('SELECT description FROM stage WHERE recipe = ? ORDER BY rank').all(id);
     return found;
@@ -15,26 +15,6 @@ exports.read = (id) => {
     return null;
   }
 };
-
-exports.create = function(activity) {
-  var id = db.prepare('INSERT INTO activity (name, img, city) VALUES (@name, @img, @city)').run(activity).lastInsertRowid;
-
-  var insert1 = db.prepare('INSERT INTO regions VALUES (@activity, @rank, @name)');
-  //var insert2 = db.prepare('INSERT INTO stage VALUES (@recipe, @rank, @description)');
-
-  var transaction = db.transaction((activity) => {
-    for(let j = 0; j < activity.region.length; j++) {
-      insert1.run({activity: id, rank: j, name: activity.region[j].name});
-    }
-    // for(var j = 0; j < recipe.stages.length; j++) {
-    //   insert2.run({recipe: id, rank: j, description: recipe.stages[j].description});
-    // }
-  });
-
-  transaction(activity);
-  return id;
-}
-
 
 exports.search = (query, page) => {
   const num_per_page = 32;
@@ -48,6 +28,7 @@ exports.search = (query, page) => {
   var num_pages = parseInt(num_found / num_per_page) + 1;
   if (page==num_pages){
     next_page = page;
+  }
   if (page == num_pages){
     next_page = null;
   }
@@ -70,7 +51,8 @@ exports.search = (query, page) => {
     page: page,
     num_pages: parseInt(num_found / num_per_page) + 1,
   };
-};
+
+}
 
 
 exports.login = function login(name, password){
@@ -97,11 +79,9 @@ exports.delete_favorite = function delete_favorite(id_user, id_activity){
 
 exports.suggestion = function suggestion(){
   const num_per_page = 4;
-  var random = db.prepare('SELECT * FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
   var random = db.prepare('SELECT id_activity as entry, name, img FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
 
   return {
-    random: random,
-    page: page
+    random: random
   };
 }

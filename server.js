@@ -29,11 +29,9 @@ function paramMustache(req, res, next) {
   if (req.session.user !== undefined){
     res.locals.authenticated = true;
     res.locals.name = req.session.user.name;
-    //res.locals.id_user = req.session.user.id_user;
   }else {
     res.locals.authenticated = false;
     res.locals.name = null;
-    //res.locals.id_user = null;
   }
   next();
 }
@@ -50,7 +48,6 @@ app.use(paramMustache);
 
 /* Retourne une page principale avec le nombre de recettes */
 app.get('/', (req, res) => {
-  res.render('suggestion');
   let random = model.suggestion();
   res.render('suggestion', random);
 });
@@ -62,19 +59,19 @@ app.get('/search', (req, res) => {
 });
 
 /* Retourne le contenu d'une recette d'identifiant "id" */
-app.get('/read/:id', (req, res) => {
+app.get('/read/:id_activity', (req, res) => {
   let entry = model.read(req.params.id);
   res.render('read', entry);
 });
 
-app.get('/update/:id', is_authenticated,(req, res) => {
+app.get('/update/:id_activity', is_authenticated,(req, res) => {
   let entry = model.read(req.params.id);
   res.render('update', entry);
 });
 
-app.get('/delete/:id', is_authenticated, (req, res) => {
-  let entry = model.read(req.params.id);
-  res.render('delete', {id: req.params.id, title: entry.title});
+app.get('/delete/:id_activity', is_authenticated, (req, res) => {
+  let entry = model.read(req.params.id_activity);
+  res.render('delete', {id: req.params.id_activity, title: entry.title});
 });
 
 app.get('/login',(req,res)=>{
@@ -90,9 +87,7 @@ app.get("/addFavorites/:id_activity/:coeur", is_authenticated, (req,res) => {
 
   if (req.params.coeur == "♥") {
     model.add_favorite(user, req.params.id_activity);
-    let result = {
-      activity : req.params.id_activity
-    }
+    let result = {activity : req.params.id_activity}
     results = {
       result : result,
       coeur : '❤️'
@@ -101,48 +96,34 @@ app.get("/addFavorites/:id_activity/:coeur", is_authenticated, (req,res) => {
   }
   else if (req.params.coeur == "❤️") {
     model.delete_favorite(user, req.params.id_activity);
-    let result = {
-      activity : req.params.id_activity
-    }
+    let result = {activity : req.params.id_activity}
     results = {
       result : result,
-      coeur : '♥',
+      coeur : '♥'
       //display : "Activity :"
-    }
+    };
   }
 });
 
 /**** Routes pour modifier les données ****/
 
 // Fonction qui facilite la création d'une recette
-function post_data_to_monument(req) {
-  return {
-    title: req.body.title,
-    description: req.body.description,
-    img: req.body.img,
-    duration: req.body.duration,
-    //ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
-    stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
-    //stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
-  };
-}
 
-
-app.post('/update/:id', (req, res) => {
-  let id = req.params.id;
+app.post('/update/:id_activity', (req, res) => {
+  let id_activity = req.params.id_activity;
   model.update(id, post_data_to_monument(req));
-  res.redirect('/read/' + id);
+  res.redirect('/read/' + id_activity);
 });
 
-app.post('/delete/:id', (req, res) => {
-  model.delete(req.params.id);
+app.post('/delete/:id_activity', (req, res) => {
+  model.delete(req.params.id_activity);
   res.redirect('/');
 });
 
 app.post('/login', (req, res)=>{
-    const id = model.login(req.body.name, req.body.password);
-    if (id >-1){
-      req.session.user = {id, name : req.body.name};
+    const id_user = model.login(req.body.name, req.body.password);
+    if (id_user >-1){
+      req.session.user = {id_user, name : req.body.name};
       res.redirect('/');
     }
     else {
@@ -156,8 +137,8 @@ app.post('/logout',(req, res)=> {
 });
 
 app.post('/new_user', (req, res)=>{
-  const id = model.new_user(req.body.name, req.body.password);
-  req.session.user = {id, name : req.body.name};
+  const id_user = model.new_user(req.body.name, req.body.password);
+  req.session.user = {id_user, name : req.body.name};
   res.redirect('/');
 });
 

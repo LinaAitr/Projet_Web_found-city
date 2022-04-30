@@ -2,20 +2,6 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col">
-      <h1 class="display-3">{{title}}</h1>
-      <p>{{description}}</p>
-      <p class="fx-bold mb3">Durée : {{duration}}</p>
-      <button type="button" name="button" onclick="add_fav({{id_user}},{{id}})"> <3 </button>
-
-      <p class="display-5">Étapes : </p>
-      <ol>
-        {{#stages}}
-          <li>{{description}}</li>
-        {{/stages}}
-      </ol>
-
-
-
       <p class="display-3">{{name}} </p>
 
       <p class="display-5">Ville : {{city}} </p>
@@ -23,10 +9,8 @@
     </div>
     <div class="col d-flex flex-column">
       <img class="img-fluid" src="{{img}}">
-      <div class='text-center'>
-        <a class="btn btn-light" href="/update/{{id}}">Modifier</a>
-        <a class="btn btn-light" href="/delete/{{id}}">Supprimer</a>
-      </div>
+    </div>
+
 
       <form class="" action="/addFavorites/{{id_activity}}/{{coeur}}" method="get">
         <button type="submit"> {{coeur}} </button>
@@ -34,13 +18,7 @@
 
     </div>
   </div>
-</div>
 
-<script type="text/javascript">
-  function add_fav(id_user, id_activity){
-    model.exports.add_favorite(id_user, id_activity)
-  }
 
-</script>
 
 {{> footer}}
