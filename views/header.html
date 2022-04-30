@@ -41,5 +41,10 @@
           <input class="form-control me-2" type="text" placeholder="Region, Ville ..." name="query" aria-label="Search" value="{{query}}">
           <button class="btn btn-light" type="submit">Rechercher</button>
         </form>
+        {{#authenticated}}
+        <form action="/favorites" method="get">
+          <button class="btn btn-danger mx-2" type="submit">Mes favoris</button>
+        </form>
+        {{/authenticated}}
       </div>
     </nav>
