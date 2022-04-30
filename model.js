@@ -85,6 +85,11 @@ exports.add_favorite = function add_favorite(id_user, id_activity){
   return fav;
 }
 
+exports.del_favorite = function del_favorite(id_user, id_activity){
+  db.prepare('DELETE FROM favoriteWHERE id_user=? and id_activity=?').run(id_user, id_activity);
+
+}
+
 exports.suggestion = function suggestion(page){
   const num_per_page = 4;
   var random = db.prepare('SELECT * FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
