@@ -81,6 +81,7 @@ app.get('/login',(req,res)=>{
 app.get('/new_user',(req,res)=>{
   res.render('new_user');
 });
+<<<<<<< HEAD
 
 app.get("/addFavorites/:id_activity/:coeur", is_authenticated, (req,res) => {
   let results;
@@ -105,6 +106,13 @@ app.get("/addFavorites/:id_activity/:coeur", is_authenticated, (req,res) => {
   }
 });
 
+=======
+///FAVORITE !!!!
+app.get('/favorites',(req,res)=>{
+  res.render('favorites');
+});
+////
+>>>>>>> ee3e27cf71b7fc35dc53dd388b302027ffe68a51
 /**** Routes pour modifier les données ****/
 
 // Fonction qui facilite la création d'une recette
