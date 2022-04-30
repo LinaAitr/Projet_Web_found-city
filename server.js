@@ -82,7 +82,11 @@ app.get('/new_user',(req,res)=>{
   res.render('new_user');
 });
 
-app.get("/addFavorites/:id_activity/:coeur", is_authenticated, (req,res) => {
+app.get('/favorites',(req,res)=>{
+  res.render('favorites');
+});
+
+app.get("/addFavorite/:id_activity/:coeur", is_authenticated, (req,res) => {
   let results;
 
   if (req.params.coeur == "♥") {

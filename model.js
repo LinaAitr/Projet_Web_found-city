@@ -70,8 +70,6 @@ exports.add_favorite = function add_favorite(id_user, id_activity){
   return fav;
 }
 
-
-
 exports.delete_favorite = function delete_favorite(id_user, id_activity){
   const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
   return fav;
@@ -85,14 +83,14 @@ exports.suggestion = function suggestion(){
     random: random
   };
 }
-///FAVORITE !!!!
+
 exports.favorites = (query, page) => {
   const num_per_page = 32;
   page = parseInt(page || 1);
   var previous_page;
   var next_page;
 
-  var num_found = db.prepare('SELECT count(*) FROM favorite').get()['count(*)'];
+  var num_found = db.prepare('SELECT count(*) FROM favorite')['count(*)'];
   var fav = db.prepare('SELECT id_activity as entry, name, img FROM favorite ORDER BY id_activity LIMIT ? OFFSET ?').all(num_per_page, (page - 1) * num_per_page);
   var num_pages = parseInt(num_found / num_per_page) + 1;
   if (page==num_pages){
