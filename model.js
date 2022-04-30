@@ -61,13 +61,8 @@ exports.login = function login(name, password){
 }
 
 exports.new_user = function new_user(name, password){
-  let found = db.prepare('SELECT id_user FROM user WHERE name=? and password=?').get(name, password);
-  if(found !== undefined) {
-    const newUser = db.prepare('SELECT id_user FROM user WHERE name=? and password=?').get(name, password);
-  } else {
-    const newUser = db.prepare("INSERT INTO user(name, password) VALUES (@name, @password)").run({name, password});
-  }
-  return newUser.id_user;
+  const newUser = db.prepare("INSERT INTO user(name, password) VALUES (@name, @password)").run({name, password});
+  return newUser.id;
 }
 
 exports.add_favorite = function add_favorite(id_user, id_activity){
