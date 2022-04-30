@@ -71,7 +71,6 @@ exports.add_favorite = function add_favorite(id_user, id_activity){
 }
 
 
-exports.suggestion = function suggestion(page){
 
 exports.delete_favorite = function delete_favorite(id_user, id_activity){
   const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
@@ -117,4 +116,4 @@ exports.favorites = (query, page) => {
     page: page,
     num_pages: parseInt(num_found / num_per_page) + 1,
   };
-};
+}
