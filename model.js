@@ -48,6 +48,8 @@ exports.search = (query, page) => {
   var num_pages = parseInt(num_found / num_per_page) + 1;
   if (page==num_pages){
     next_page = page;
+  if (page == num_pages){
+    next_page = null;
   }
   else {
     next_page = page+1;
@@ -87,8 +89,16 @@ exports.add_favorite = function add_favorite(id_user, id_activity){
 }
 
 exports.suggestion = function suggestion(page){
+
+exports.delete_favorite = function delete_favorite(id_user, id_activity){
+  const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  return fav;
+}
+
+exports.suggestion = function suggestion(){
   const num_per_page = 4;
   var random = db.prepare('SELECT * FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
+  var random = db.prepare('SELECT id_activity as entry, name, img FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
 
   return {
     random: random,
