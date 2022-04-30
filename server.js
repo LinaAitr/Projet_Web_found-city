@@ -50,6 +50,7 @@ app.use(paramMustache);
 
 /* Retourne une page principale avec le nombre de recettes */
 app.get('/', (req, res) => {
+  let found = model.suggestion(req.query.page);
   res.render('suggestion');
 });
 
@@ -86,16 +87,16 @@ app.get('/new_user',(req,res)=>{
 /**** Routes pour modifier les données ****/
 
 // Fonction qui facilite la création d'une recette
-function post_data_to_monument(req) {
-  return {
-    title: req.body.title,
-    description: req.body.description,
-    img: req.body.img,
-    duration: req.body.duration,
-    //ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
-    stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
-  };
-}
+// function post_data_to_monument(req) {
+//   return {
+//     title: req.body.title,
+//     description: req.body.description,
+//     img: req.body.img,
+//     duration: req.body.duration,
+//     //ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
+//     stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
+//   };
+// }
 
 
 app.post('/update/:id_activity', (req, res) => {
