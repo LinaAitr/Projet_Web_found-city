@@ -8,8 +8,6 @@ exports.read = (id) => {
   let found = db.prepare('SELECT * FROM activity WHERE id_activity = ?').get(id);
   if(found !== undefined) {
     //found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
-    //found.region = db.prepare('SELECT name FROM region WHERE monument = ? ORDER BY rank').all(id);
-    //found.stages = db.prepare('SELECT description FROM stage WHERE recipe = ? ORDER BY rank').all(id);
     return found;
   } else {
     return null;
@@ -65,18 +63,6 @@ exports.new_user = function new_user(name, password){
   return newUser.id_user;
 }
 
-exports.add_favorite = function add_favorite(id_user, id_activity){
-  const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
-  return fav;
-}
-
-
-
-exports.delete_favorite = function delete_favorite(id_user, id_activity){
-  const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
-  return fav;
-}
-
 exports.suggestion = function suggestion(){
   const num_per_page = 4;
   var random = db.prepare('SELECT id_activity as entry, name, img FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
@@ -85,6 +71,22 @@ exports.suggestion = function suggestion(){
     random: random
   };
 }
+
+exports.add_favorite = function add_favorite(id_user, id_activity){
+  const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  return fav;
+}
+
+exports.delete_favorite = function delete_favorite(id_user, id_activity){
+  const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  return fav;
+}
+
+exports.is_favorite = (id_user, id_activity) => {
+  const fav = db.prepare('SELECT id_activity FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  return fav !== undefined;
+}
+
 ///FAVORITE !!!!
 exports.favorites = (query, page) => {
   const num_per_page = 32;
@@ -116,4 +118,5 @@ exports.favorites = (query, page) => {
     page: page,
     num_pages: parseInt(num_found / num_per_page) + 1,
   };
+};
 }

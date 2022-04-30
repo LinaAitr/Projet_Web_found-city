@@ -72,6 +72,7 @@ app.get('/update/:id_activity', is_authenticated,(req, res) => {
 app.get('/delete/:id_activity', is_authenticated, (req, res) => {
   let entry = model.read(req.params.id_activity);
   res.render('delete', {id: req.params.id_activity, title: entry.title});
+  res.render('read', entry);
 });
 
 app.get('/login',(req,res)=>{
