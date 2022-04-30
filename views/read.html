@@ -13,6 +13,13 @@
           <li>{{description}}</li>
         {{/stages}}
       </ol>
+
+
+
+      <p class="display-3">{{name}} </p>
+
+      <p class="display-5">Ville : {{city}} </p>
+
     </div>
     <div class="col d-flex flex-column">
       <img class="img-fluid" src="{{img}}">
@@ -20,6 +27,11 @@
         <a class="btn btn-light" href="/update/{{id}}">Modifier</a>
         <a class="btn btn-light" href="/delete/{{id}}">Supprimer</a>
       </div>
+
+      <form class="" action="/addFavorites/{{id_activity}}/{{coeur}}" method="get">
+        <button type="submit"> {{coeur}} </button>
+      </form>
+
     </div>
   </div>
 </div>

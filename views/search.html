@@ -22,10 +22,22 @@
       {{/results}}
   </div>
 
-  {{#next_page}}
-  <div>
+<div class="column">
+  <div class="col-3 d-flex align-items-stretch mb-3">
+    {{#previous_page}}
     <div>
-      <a class="btn btn-outline-secondary" href="/search?query={{query}}&page={{next_page}}">Page suivante</a>
+      <div>
+        <a class="btn btn-outline-secondary" href="/search?query={{query}}&page={{previous_page}}">Page précédente</a>
+      </div>
+    </div>
+  </div>
+    {{/previous_page}}
+
+    {{#next_page}}
+    <div>
+      <div>
+        <a class="btn btn-outline-secondary" href="/search?query={{query}}&page={{next_page}}">Page suivante</a>
+      </div>
     </div>
   </div>
 </div>

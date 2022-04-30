@@ -51,6 +51,8 @@ app.use(paramMustache);
 /* Retourne une page principale avec le nombre de recettes */
 app.get('/', (req, res) => {
   res.render('suggestion');
+  let random = model.suggestion();
+  res.render('suggestion', random);
 });
 
 /* Retourne les résultats de la recherche à partir de la requête "query" */
@@ -83,6 +85,33 @@ app.get('/new_user',(req,res)=>{
   res.render('new_user');
 });
 
+app.get("/addFavorites/:id_activity/:coeur", is_authenticated, (req,res) => {
+  let results;
+
+  if (req.params.coeur == "♥") {
+    model.add_favorite(user, req.params.id_activity);
+    let result = {
+      activity : req.params.id_activity
+    }
+    results = {
+      result : result,
+      coeur : '❤️'
+      //display : "Activity :"
+    }
+  }
+  else if (req.params.coeur == "❤️") {
+    model.delete_favorite(user, req.params.id_activity);
+    let result = {
+      activity : req.params.id_activity
+    }
+    results = {
+      result : result,
+      coeur : '♥',
+      //display : "Activity :"
+    }
+  }
+});
+
 /**** Routes pour modifier les données ****/
 
 // Fonction qui facilite la création d'une recette
@@ -94,6 +123,7 @@ function post_data_to_monument(req) {
     duration: req.body.duration,
     //ingredients: req.body.ingredients.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({name: e.trim()})),
     stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
+    //stages: req.body.stages.trim().split(/\s*-/).filter(e => e.length > 0).map(e => ({description: e.trim()})),
   };
 }
 
