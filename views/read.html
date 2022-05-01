@@ -8,16 +8,20 @@
 
     <div class="col d-flex flex-column">
       <img class="img-fluid" src="{{img}}">
+
+      <div class='text-center'>
+      {{#authenticated}}
+        <form action="/add_favorite/{{id_activity}}" method="post">
+          <button class="btn btn-outline-danger mx-2" type="submit">Ajouter aux Favoris </button>
+        </form>
+        <form action="/delete_favorite/{{id_activity}}" method="post">
+          <button class="btn btn-outline-danger mx-2" type="submit">Retirer des Favoris</button>
+        </form>
+      {{/authenticated}}
+      </div>
     </div>
 
-    {{#authenticated}}
-      <form action="/add_favorite/{{id_activity}}" method="post">
-        <button type="submit"> add </button>
-      </form>
-      <form action="/delete_favorite/{{id_activity}}" method="post">
-        <button type="submit"> del</button>
-      </form>
-    {{/authenticated}}
+    </div>
 
     </div>
   </div>

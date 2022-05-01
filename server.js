@@ -78,11 +78,13 @@ app.get('/favorites',(req,res)=>{
 });
 
 // app.get('/add_favorite/:id_activity',(req,res)=>{
-//   res.render(isFav);
+//   let fav = model.favorites(req.session.user.id, req.query.page);
+//   res.render('favorites', fav);
 // });
-
+//
 // app.get('/delete_favorite/:id_activity',(req,res)=>{
-//   res.render(isFav);
+//   let fav = model.favorites(req.session.user.id, req.query.page);
+//   res.render('favorites', fav);
 // });
 
 /**** Routes pour modifier les données ****/
@@ -92,9 +94,6 @@ app.post('/add_favorite/:id_activity', (req,res) => {
     model.add_favorite(req.session.user.id, req.params.id_activity);
     res.redirect('/');
 });
-
-
-
 
 app.post('/delete_favorite/:id_activity', (req,res) => {
   model.delete_favorite(req.session.user.id, req.params.id_activity);
