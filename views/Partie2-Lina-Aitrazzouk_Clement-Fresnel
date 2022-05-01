@@ -1,4 +1,0 @@
-Pour répondre a la problématique que nous avons précédemment identifier, nous allons créer un site web sur lequel l'utilisateur pourra s'identifier
-pour faire des recherche de lieux a visiter en Francevia plusieur sorte de critère.
-Chaque session sera contenu dans une base de donnée dans laquelle on enregistrera les préférance de l'utilisateur et ses donnée de connexion.
-Grace a ses données il y aura en page principal des recommendation de lieux. Les lieux proposés et recherché seront issue d'un fichier JSON.
