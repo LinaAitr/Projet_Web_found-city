@@ -73,7 +73,7 @@ app.get('/new_user',(req,res)=>{
 });
 
 app.get('/favorites',(req,res)=>{
-  let fav = model.favorites(req.session.user.id, req.params.id_activity, req.query.page);
+  let fav = model.favorites(req.session.user.id, req.query.page);
   res.render('favorites', fav);
 });
 
