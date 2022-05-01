@@ -11,11 +11,11 @@
     </div>
 
     {{#authenticated}}
-      <form action="/addsFavorite/{{id_activity}}" method="post">
-        <button type="submit"> {{button}} </button>
+      <form action="/add_favorite/{{id_activity}}" method="post">
+        <button type="submit"> add </button>
       </form>
-      <form action="/addsFavorite/{{id_activity}}" method="post">
-        <button type="submit"> {{button}}</button>
+      <form action="/delete_favorite/{{id_activity}}" method="post">
+        <button type="submit"> del</button>
       </form>
     {{/authenticated}}
 

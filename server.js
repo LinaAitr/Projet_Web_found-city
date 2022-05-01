@@ -87,15 +87,17 @@ app.get('/favorites',(req,res)=>{
 /**** Routes pour modifier les données ****/
 
 
-app.post('/addsFavorite/:id_activity', (req,res) => {
-  if (model.is_favorite(req.session.user.id, req.params.id_activity)== true){
+app.post('/add_favorite/:id_activity', (req,res) => {
     model.add_favorite(req.session.user.id, req.params.id_activity);
-    let button = "</3";
-  }else { model.delete_favorite(req.session.user.id, req.params.id_activity);
-    let button = "<3";
-  }
+    res.redirect('/');
+});
+
+
+
+
+app.post('/add_favorite/:id_activity', (req,res) => {
+  model.delete_favorite(req.session.user.id, req.params.id_activity);
   res.redirect('/');
-  res.render(button);
 });
 
 
