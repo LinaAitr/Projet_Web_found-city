@@ -96,7 +96,7 @@ app.post('/add_favorite/:id_activity', (req,res) => {
 
 
 
-app.post('/add_favorite/:id_activity', (req,res) => {
+app.post('/delete_favorite/:id_activity', (req,res) => {
   model.delete_favorite(req.session.user.id, req.params.id_activity);
   res.redirect('/');
 });

@@ -103,7 +103,7 @@ exports.favorites = (id_user, page) => {
   var next_page;
 
   var num_fav = db.prepare('SELECT count(id_activity) FROM favorite WHERE id_user=?').get(id_user)['count(id_activity)'];
-  var fav = db.prepare('SELECT activity.id_activity as entry, name, img FROM activity INNER JOIN favorite WHERE activity.id_activity=? and favorite.id_user=activity.id_activity ORDER BY activity.id_activity LIMIT ? OFFSET ?').all(id_user, num_per_page, (page - 1) * num_per_page);
+  var fav = db.prepare('SELECT activity.id_activity as entry, name, img FROM activity INNER JOIN favorite WHERE activity.id_activity=favorite.id_activity and favorite.id_user=? ORDER BY activity.id_activity LIMIT ? OFFSET ?').all(id_user, num_per_page, (page - 1) * num_per_page);
   var num_pages = parseInt(num_fav / num_per_page) + 1;
   if (page==num_pages){
     next_page = null;
