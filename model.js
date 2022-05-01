@@ -73,21 +73,29 @@ exports.suggestion = function suggestion(){
 }
 
 exports.add_favorite = function add_favorite(id_user, id_activity){
-  const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (?, ?)').run(id_user, id_activity);
-  return fav;
+  db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (?, ?)').run(id_user, id_activity);
+  // let isFav = true;
+  // return {
+  //   isFav: isFav
+  // };
 }
 
 exports.delete_favorite = function delete_favorite(id_user, id_activity){
-  const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (?, ?)').run(id_user, id_activity);
-  return fav;
+  db.prepare('DELETE FROM favorite WHERE id_user=? and id_activity=?').run(id_user, id_activity);
 }
 
-exports.is_favorite = (id_user, id_activity) => {
-  const fav = db.prepare('SELECT id_activity FROM favorite WHERE id_user=? and id_activity=?').run(id_user, id_activity);
-  return fav != undefined;
-}
+// exports.is_favorite = function is_favorite(id_user, id_activity) {
+//   const act = db.prepare('SELECT id_activity FROM favorite WHERE id_user=? and id_activity=?').all(id_user, id_activity);
+//   if(act !== undefined){
+//     let isFav = true;
+//   } else {
+//     let isFav = false;
+//   }
+//   return {
+//     isFav: isFav
+//   };
+// }
 
-///FAVORITE !!!!
 exports.favorites = (query, page) => {
   const num_per_page = 32;
   page = parseInt(page || 1);
@@ -95,10 +103,10 @@ exports.favorites = (query, page) => {
   var next_page;
 
   var num_found = db.prepare('SELECT count(*) FROM favorite').get()['count(*)'];
-  var fav = db.prepare('SELECT id_activity as entry, name, img FROM favorite ORDER BY id_activity LIMIT ? OFFSET ?').all(num_per_page, (page - 1) * num_per_page);
+  var fav = db.prepare('SELECT id_activity as entry, name, img WHERE id_user=? ORDER BY id_activity LIMIT ? OFFSET ?').all(id_user, num_per_page, (page - 1) * num_per_page);
   var num_pages = parseInt(num_found / num_per_page) + 1;
   if (page==num_pages){
-    next_page = page;
+    next_page = null;
   }
   else {
     next_page = page+1;
@@ -118,5 +126,4 @@ exports.favorites = (query, page) => {
     page: page,
     num_pages: parseInt(num_found / num_per_page) + 1,
   };
-};
 }

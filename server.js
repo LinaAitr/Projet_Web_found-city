@@ -72,36 +72,31 @@ app.get('/new_user',(req,res)=>{
   res.render('new_user');
 });
 
-app.get("/addFavorites/:id_activity", is_authenticated, (req,res) => {
-  let results;
-
-  //if (req.params.coeur == "♥") {
-  if(model.is_favorite(req.session.user.id, req.params.id_activity)){
-    model.add_favorite(req.session.user.id, req.params.id_activity);
-    let result = {activity : req.params.id_activity}
-    results = {
-      result : result
-      //coeur : '❤️'
-    }
-  }
-  //else if (req.params.coeur == "❤️") {
-  else {
-    model.delete_favorite(req.session.user.id, req.params.id_activity);
-    let result = {activity : req.params.id_activity}
-    results = {
-      result : result
-      //coeur : '♥'
-    };
-  }
-});
-
 app.get('/favorites',(req,res)=>{
   res.render('favorites');
 });
 
+// app.get('/add_favorite/:id_activity',(req,res)=>{
+//   res.render(isFav);
+// });
+
+// app.get('/delete_favorite/:id_activity',(req,res)=>{
+//   res.render(isFav);
+// });
+
 /**** Routes pour modifier les données ****/
 
-// Fonction qui facilite la création d'une recette
+
+app.post('/add_favorite/:id_activity', (req,res) => {
+    model.add_favorite(req.session.user.id, req.params.id_activity);
+    res.redirect('/');
+});
+
+app.post("/delete_favorite/:id_activity", (req,res) => {
+    model.delete_favorite(req.session.user.id, req.params.id_activity);
+    res.redirect('/');
+});
+
 
 app.post('/login', (req, res)=>{
     const id_user = model.login(req.body.name, req.body.password);
