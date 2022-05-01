@@ -10,7 +10,7 @@ le site lui proposera alors plusieur endroit avec un monument a voir en France. 
 et si il est connecté le site lui proposera des monuments en fonction de ses dernieres recherches.
 
 TEXTE PARTIE 3
-
+instructions :
 X Changements par rapport à la conception :
 X Difficultés rencontrées :
 X Originalité et effort : (je crois que la on a rien a dire)
@@ -20,6 +20,7 @@ De quels données sur des lieux et monuments avez-vous besoin ? Comment allez-vo
 Sous quelle forme allez-vous les stocker ? Sous quel forme l'historique de recherche d'un utilisateur est-il stocké ?
 Comment est-il utilisé pour influencer les résultats de recherche ? ..."
 
+rapports :
 Pour ce projet, nous avons eu comme idée de créer un site de tourisme permettant
 de donner des informations tel que les regions, les villes,en cherchant un lieux.
 Entre la partie 1 et la partie 2 nous nous somme orienté vers quelque chose de
