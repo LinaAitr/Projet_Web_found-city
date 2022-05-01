@@ -73,28 +73,41 @@ app.get('/new_user',(req,res)=>{
 });
 
 app.get('/favorites',(req,res)=>{
-  res.render('favorites');
+  let fav = model.favorites(req.session.user.id, req.query.page);
+  res.render('favorites', fav);
 });
 
 // app.get('/add_favorite/:id_activity',(req,res)=>{
-//   res.render(isFav);
+//   let fav = model.favorites(req.session.user.id, req.query.page);
+//   res.render('favorites', fav);
 // });
-
+//
 // app.get('/delete_favorite/:id_activity',(req,res)=>{
-//   res.render(isFav);
+//   let fav = model.favorites(req.session.user.id, req.query.page);
+//   res.render('favorites', fav);
 // });
 
 /**** Routes pour modifier les données ****/
 
+app.get('/add_favorite/:id_activity',(req,res)=>{
+  let id_activity = model.read(req.params.id_activity);
+  res.render('read', id_activity);
+});
+
+app.get('/delete_favorite/:id_activity',(req,res)=>{
+  let id_activity = model.read(req.params.id_activity);
+  res.render('read', id_activity);
+});
+
 
 app.post('/add_favorite/:id_activity', (req,res) => {
     model.add_favorite(req.session.user.id, req.params.id_activity);
-    res.redirect('/');
+    res.redirect('');
 });
 
-app.post("/delete_favorite/:id_activity", (req,res) => {
-    model.delete_favorite(req.session.user.id, req.params.id_activity);
-    res.redirect('/');
+app.post('/delete_favorite/:id_activity', (req,res) => {
+  model.delete_favorite(req.session.user.id, req.params.id_activity);
+  res.redirect('');
 });
 
 

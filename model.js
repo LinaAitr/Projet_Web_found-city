@@ -22,7 +22,7 @@ exports.search = (query, page) => {
   var next_page;
 
   var num_found = db.prepare('SELECT count(*) FROM activity WHERE name LIKE ? OR city LIKE ?').get('%' + query + '%','%' + query + '%')['count(*)'];
-  var results = db.prepare('SELECT id_activity as entry, name, img FROM activity WHERE name LIKE ? OR city LIKE ? ORDER BY id_activity LIMIT ? OFFSET ?').all('%' + query + '%', '%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var results = db.prepare('SELECT id_activity as entry, name, img, latitude, longitude FROM activity WHERE name LIKE ? OR city LIKE ? ORDER BY id_activity LIMIT ? OFFSET ?').all('%' + query + '%', '%' + query + '%', num_per_page, (page - 1) * num_per_page);
   var num_pages = parseInt(num_found / num_per_page) + 1;
   if (page==num_pages){
     next_page = page;
@@ -65,7 +65,7 @@ exports.new_user = function new_user(name, password){
 
 exports.suggestion = function suggestion(){
   const num_per_page = 4;
-  var random = db.prepare('SELECT id_activity as entry, name, img FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
+  var random = db.prepare('SELECT id_activity as entry, name, img, latitude, longitude FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
 
   return {
     random: random
@@ -74,9 +74,9 @@ exports.suggestion = function suggestion(){
 
 exports.add_favorite = function add_favorite(id_user, id_activity){
   db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (?, ?)').run(id_user, id_activity);
-  // let isFav = true;
+  // let button ="</3";
   // return {
-  //   isFav: isFav
+  //   button: button
   // };
 }
 
@@ -87,24 +87,24 @@ exports.delete_favorite = function delete_favorite(id_user, id_activity){
 // exports.is_favorite = function is_favorite(id_user, id_activity) {
 //   const act = db.prepare('SELECT id_activity FROM favorite WHERE id_user=? and id_activity=?').all(id_user, id_activity);
 //   if(act !== undefined){
-//     let isFav = true;
+//     let button ="</3";
 //   } else {
-//     let isFav = false;
+//     let button = "<3";
 //   }
 //   return {
-//     isFav: isFav
+//     button: button
 //   };
 // }
 
-exports.favorites = (query, page) => {
+exports.favorites = (id_user, page) => {
   const num_per_page = 32;
   page = parseInt(page || 1);
   var previous_page;
   var next_page;
 
-  var num_found = db.prepare('SELECT count(*) FROM favorite').get()['count(*)'];
-  var fav = db.prepare('SELECT id_activity as entry, name, img WHERE id_user=? ORDER BY id_activity LIMIT ? OFFSET ?').all(id_user, num_per_page, (page - 1) * num_per_page);
-  var num_pages = parseInt(num_found / num_per_page) + 1;
+  var num_fav = db.prepare('SELECT count(id_activity) FROM favorite WHERE id_user=?').get(id_user)['count(id_activity)'];
+  var fav = db.prepare('SELECT activity.id_activity as entry, name, img, latitude, longitude FROM activity INNER JOIN favorite WHERE activity.id_activity=favorite.id_activity and favorite.id_user=? ORDER BY activity.id_activity LIMIT ? OFFSET ?').all(id_user, num_per_page, (page - 1) * num_per_page);
+  var num_pages = parseInt(num_fav / num_per_page) + 1;
   if (page==num_pages){
     next_page = null;
   }
@@ -120,10 +120,10 @@ exports.favorites = (query, page) => {
 
   return {
     fav: fav,
-    num_found: num_found,
+    num_fav: num_fav,
     previous_page: previous_page,
     next_page: next_page,
     page: page,
-    num_pages: parseInt(num_found / num_per_page) + 1,
+    num_pages: parseInt(num_fav / num_per_page) + 1,
   };
 }

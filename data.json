@@ -444,15 +444,15 @@
     },
     {
         "name":"Le Vieux Port",
-        "latitude":"43,2840",
-        "longitude":"5,3715",
+        "latitude":"43.2944633",
+        "longitude":"5.3470051",
         "img":"https://www.marseille-tourisme.com/app/uploads/marseille-tourisme/2020/11/thumbs/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960.jpg",
         "city":"Marseille"
     },
     {
         "name":"Basilique Notre-Dame de la Garde",
-        "latitude":"46.156196",
-        "longitude":"-1.152682",
+        "latitude":"43.2839572",
+        "longitude":"5.369049",
         "img":"https://madeinmarseille.net/actualites-marseille/2020/05/notre-dame-garde-bonne-mere.jpg",
         "city":"Marseille"
     },
