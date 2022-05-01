@@ -36,3 +36,5 @@ les fonctionnalités plus tard si nous en avions le temps.
 Comme nous travaillons en binome, nous avons decidé d'utiliser un git pour pouvoir travailler plus
 facilicement sur nos temps libre, mais malheureusement nous avons rencontré plusieurs problèmes comme
 des push ou des pull qui ne voulaient pas s'effectué, ce qui nous a couté beaucoup de temps.
+Nous avons également eu quelque problèmes lorsque nous avons reuni certaine parties, des problèmes
+qui ont été resolus mais dont nous ignorons l'origine et qui nous ont encore une fois pris du temps.
