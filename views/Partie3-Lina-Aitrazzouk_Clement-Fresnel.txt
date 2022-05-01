@@ -15,6 +15,10 @@ X Changements par rapport à la conception :
 X Difficultés rencontrées :
 X Originalité et effort : (je crois que la on a rien a dire)
 XX Le rapport doit répondre aux remarques faites sur votre document de conception (partie 2).
+"Il manque énormément de détail sur le site que vous envisagez. Quels sont les critères de recherche proposés ?
+De quels données sur des lieux et monuments avez-vous besoin ? Comment allez-vous les obtenir ?
+Sous quelle forme allez-vous les stocker ? Sous quel forme l'historique de recherche d'un utilisateur est-il stocké ?
+Comment est-il utilisé pour influencer les résultats de recherche ? ..."
 
 Pour ce projet, nous avons eu comme idée de créer un site de tourisme permettant
 de donner des informations tel que les regions, les villes,en cherchant un lieux.
