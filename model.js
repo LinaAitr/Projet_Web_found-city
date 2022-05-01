@@ -74,7 +74,8 @@ exports.delete_favorite = function delete_favorite(id_user, id_activity){
 }
 
 exports.is_favorite = function is_favorite(id_user, id_activity){
-  if (db.prepare('SELECT FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity).exist){
+  let is_fav = db.prepare('SELECT * FROM favorite WHERE id_user=? and id_activity=?').all(id_user, id_activity);
+  if (is_fav !== undefined){
     let isFav = true;
   }else {
     let isFav = false;

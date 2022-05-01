@@ -116,12 +116,12 @@ app.post('/update/:id_activity', (req, res) => {
 });
 
 app.post('/add_favorite/:id_activity', (req, res) => {
-  model.add_favorite(req.params.id_user,req.params.id_activity);
+  model.add_favorite(req.session.user.id_user,req.params.id_activity);
   res.redirect('/');
 });
 
 app.post('/delete_favorite/:id_activity', (req, res) => {
-  model.delete_favorite(req.params.id_user,req.params.id_activity);
+  model.delete_favorite(req.session.user.id_user,req.params.id_activity);
   res.redirect('/');
 });
 
