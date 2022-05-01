@@ -94,6 +94,11 @@ app.get('/add_favorite/:id_activity',(req,res)=>{
   res.render('read', id_activity);
 });
 
+app.get('/delete_favorite/:id_activity',(req,res)=>{
+  let id_activity = model.read(req.params.id_activity);
+  res.render('read', id_activity);
+});
+
 
 app.post('/add_favorite/:id_activity', (req,res) => {
     model.add_favorite(req.session.user.id, req.params.id_activity);
@@ -102,7 +107,7 @@ app.post('/add_favorite/:id_activity', (req,res) => {
 
 app.post('/delete_favorite/:id_activity', (req,res) => {
   model.delete_favorite(req.session.user.id, req.params.id_activity);
-  res.redirect('/');
+  res.redirect('');
 });
 
 
