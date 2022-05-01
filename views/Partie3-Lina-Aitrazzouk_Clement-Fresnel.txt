@@ -16,9 +16,23 @@ X Difficultés rencontrées :
 X Originalité et effort : (je crois que la on a rien a dire)
 XX Le rapport doit répondre aux remarques faites sur votre document de conception (partie 2).
 
-Pour ce projet, nous avons eu comme idée de créer un site de tourisme permettant de donner des informations tel que les regions, les villes,
-en cherchant un lieux. Entre la partie 1 et la partie 2 nous nous somme orienté vers quelque chose de plus précis : les monuments à visiter :
-en cherchant une ville, une region de france, le site nous donne des lieux a visiter.
-Pour cela, nous avons chercher des api des monument de l'unesco ou tout simplement de lieux a visité mais nous avons seulement trouvées
-un fischier JSON contenant plusieurs monuments en France (fichier que nous avons du complété manuellement en y rajoutant les images et
-en corrigeant quelques erreurs comme des monument a double et des monument notable manquant)
+Pour ce projet, nous avons eu comme idée de créer un site de tourisme permettant
+de donner des informations tel que les regions, les villes,en cherchant un lieux.
+Entre la partie 1 et la partie 2 nous nous somme orienté vers quelque chose de
+plus précis, les monuments à visiter :
+en cherchant une ville, une region de france, ou un mot clé, nous voulions que
+le site nous donne des lieux a visité. De plus nous voulions que chaque monuments/activité
+soit categorisé afin que le site enregistre les préférence de l'utilisateur pour
+lui proposer des lieux en rapport avec ses preference en page d'acceuil.
+Pour cela, nous avons cherché des api des monuments de l'unesco et de lieux a visiter
+mais nous avons seulement trouvés un fischier JSON contenant plusieurs monuments en France
+contenat uniquement le nom, la ville et les coordonnee GPS, nous avons donc du le compléter
+manuellement en y rajoutant les images et en corrigeant quelques erreurs comme des monuments
+a double et des monument notable manquant. De plus, ce fichier ne contenant pas de description
+ou de categorie, nous avons mis de coté l'aspect catégorie et préférence afin de ne pas perdre
+trop de temps et d'avoir une base du site en gardant en tête que nous allions approfondir
+les fonctionnalités plus tard si nous en avions le temps.
+
+Comme nous travaillons en binome, nous avons decidé d'utiliser un git pour pouvoir travailler plus
+facilicement sur nos temps libre, mais malheureusement nous avons rencontré plusieurs problèmes comme
+des push ou des pull qui ne voulaient pas s'effectué, ce qui nous a couté beaucoup de temps.
