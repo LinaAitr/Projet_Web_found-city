@@ -74,27 +74,27 @@ exports.suggestion = function suggestion(){
 
 exports.add_favorite = function add_favorite(id_user, id_activity){
   db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (?, ?)').run(id_user, id_activity);
-  // let isFav = true;
-  // return {
-  //   isFav: isFav
-  // };
+  let button ="</3";
+  return {
+    button: button
+  };
 }
 
 exports.delete_favorite = function delete_favorite(id_user, id_activity){
   db.prepare('DELETE FROM favorite WHERE id_user=? and id_activity=?').run(id_user, id_activity);
 }
 
-// exports.is_favorite = function is_favorite(id_user, id_activity) {
-//   const act = db.prepare('SELECT id_activity FROM favorite WHERE id_user=? and id_activity=?').all(id_user, id_activity);
-//   if(act !== undefined){
-//     let isFav = true;
-//   } else {
-//     let isFav = false;
-//   }
-//   return {
-//     isFav: isFav
-//   };
-// }
+exports.is_favorite = function is_favorite(id_user, id_activity) {
+  const act = db.prepare('SELECT id_activity FROM favorite WHERE id_user=? and id_activity=?').all(id_user, id_activity);
+  if(act !== undefined){
+    let button ="</3";
+  } else {
+    let button = "<3";
+  }
+  return {
+    button: button
+  };
+}
 
 exports.favorites = (query, page) => {
   const num_per_page = 32;
