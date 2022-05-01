@@ -42,23 +42,20 @@ secret: randomstring.generate(),
 
 app.use(paramMustache);
 
-///........................................................................////
+///........................................................................///
 
-/**** Routes pour voir les pages du site ****/
-
-/* Retourne une page principale avec le nombre de recettes */
 app.get('/', (req, res) => {
   let random = model.suggestion();
   res.render('suggestion', random);
 });
 
-/* Retourne les résultats de la recherche à partir de la requête "query" */
+
 app.get('/search', (req, res) => {
   let found = model.search(req.query.query, req.query.page);
   res.render('search', found);
 });
 
-/* Retourne le contenu d'une recette d'identifiant "id" */
+
 app.get('/read/:id_activity', (req, res) => {
   let entry = model.read(req.params.id_activity);
   res.render('read', entry);
@@ -87,8 +84,6 @@ app.get('/favorites',(req,res)=>{
 //   res.render('favorites', fav);
 // });
 
-/**** Routes pour modifier les données ****/
-
 app.get('/add_favorite/:id_activity',(req,res)=>{
   let id_activity = model.read(req.params.id_activity);
   res.render('read', id_activity);
@@ -99,6 +94,7 @@ app.get('/delete_favorite/:id_activity',(req,res)=>{
   res.render('read', id_activity);
 });
 
+///........................................................................///
 
 app.post('/add_favorite/:id_activity', (req,res) => {
     model.add_favorite(req.session.user.id, req.params.id_activity);
@@ -116,8 +112,7 @@ app.post('/login', (req, res)=>{
     if (id_user >-1){
       req.session.user = {id : id_user, name : req.body.name};
       res.redirect('/');
-    }
-    else {
+    } else {
       res.redirect('/login');
     }
 });
@@ -129,7 +124,7 @@ app.post('/logout',(req, res)=> {
 
 app.post('/new_user', (req, res)=>{
   const id_user = model.new_user(req.body.name, req.body.password);
-  req.session.user = {id_user, name : req.body.name};
+  req.session.user = {id : id_user, name : req.body.name};
   res.redirect('/');
 });
 
