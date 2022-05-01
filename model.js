@@ -74,17 +74,21 @@ exports.suggestion = function suggestion(){
 
 exports.add_favorite = function add_favorite(id_user, id_activity){
   const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  const fav = db.prepare('INSERT INTO favorite(id_user, id_activity) VALUES (?, ?)').run(id_user, id_activity);
   return fav;
 }
 
 exports.delete_favorite = function delete_favorite(id_user, id_activity){
   const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
+  const fav = db.prepare('DELETE FROM favorite(id_user, id_activity) VALUES (?, ?)').run(id_user, id_activity);
   return fav;
 }
 
 exports.is_favorite = (id_user, id_activity) => {
   const fav = db.prepare('SELECT id_activity FROM favorite(id_user, id_activity) VALUES (@id_user, @id_activity)').run(id_user, id_activity);
   return fav !== undefined;
+  const fav = db.prepare('SELECT id_activity FROM favorite WHERE id_user=? and id_activity=?').run(id_user, id_activity);
+  return fav != undefined;
 }
 
 ///FAVORITE !!!!

@@ -19,6 +19,7 @@ let create_tables = function() {
   db.prepare('CREATE TABLE favorite (id_user INTEGER, id_activity INTEGER, PRIMARY KEY(id_user, id_activity),'
             + 'FOREIGN KEY(id_user) REFERENCES user(id_user) ON DELETE CASCADE , '
             + 'FOREIGN KEY(id_activity) REFERENCES user(id_activity) ON DELETE CASCADE)').run()
+            + 'FOREIGN KEY(id_activity) REFERENCES activity(id_activity) ON DELETE CASCADE)').run()
 
   db.prepare('DROP TABLE IF EXISTS location').run();
   db.prepare('CREATE TABLE location (id_location INT, rank INT, name TEXT, city TEXT, latitude FLOAT, longitude FLOAT)').run();

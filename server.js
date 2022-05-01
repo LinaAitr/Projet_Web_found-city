@@ -60,18 +60,7 @@ app.get('/search', (req, res) => {
 
 /* Retourne le contenu d'une recette d'identifiant "id" */
 app.get('/read/:id_activity', (req, res) => {
-  let entry = model.read(req.params.id);
-  res.render('read', entry);
-});
-
-app.get('/update/:id_activity', is_authenticated,(req, res) => {
-  let entry = model.read(req.params.id);
-  res.render('update', entry);
-});
-
-app.get('/delete/:id_activity', is_authenticated, (req, res) => {
   let entry = model.read(req.params.id_activity);
-  res.render('delete', {id: req.params.id_activity, title: entry.title});
   res.render('read', entry);
 });
 
@@ -83,48 +72,41 @@ app.get('/new_user',(req,res)=>{
   res.render('new_user');
 });
 
-app.get("/addFavorites/:id_activity/:coeur", is_authenticated, (req,res) => {
+app.get("/addFavorites/:id_activity", is_authenticated, (req,res) => {
   let results;
 
-  if (req.params.coeur == "♥") {
-    model.add_favorite(user, req.params.id_activity);
+  //if (req.params.coeur == "♥") {
+  if(model.is_favorite(req.session.user.id, req.params.id_activity)){
+    model.add_favorite(req.session.user.id, req.params.id_activity);
     let result = {activity : req.params.id_activity}
     results = {
-      result : result,
-      coeur : '❤️'
-      //display : "Activity :"
+      result : result
+      //coeur : '❤️'
     }
   }
-  else if (req.params.coeur == "❤️") {
-    model.delete_favorite(user, req.params.id_activity);
+  //else if (req.params.coeur == "❤️") {
+  else {
+    model.delete_favorite(req.session.user.id, req.params.id_activity);
     let result = {activity : req.params.id_activity}
     results = {
-      result : result,
-      coeur : '♥'
-      //display : "Activity :"
+      result : result
+      //coeur : '♥'
     };
   }
+});
+
+app.get('/favorites',(req,res)=>{
+  res.render('favorites');
 });
 
 /**** Routes pour modifier les données ****/
 
 // Fonction qui facilite la création d'une recette
 
-app.post('/update/:id_activity', (req, res) => {
-  let id_activity = req.params.id_activity;
-  model.update(id, post_data_to_monument(req));
-  res.redirect('/read/' + id_activity);
-});
-
-app.post('/delete/:id_activity', (req, res) => {
-  model.delete(req.params.id_activity);
-  res.redirect('/');
-});
-
 app.post('/login', (req, res)=>{
     const id_user = model.login(req.body.name, req.body.password);
     if (id_user >-1){
-      req.session.user = {id_user, name : req.body.name};
+      req.session.user = {id : id_user, name : req.body.name};
       res.redirect('/');
     }
     else {
