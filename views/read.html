@@ -1,9 +1,11 @@
 {{> header}}
 <div class="container mt-5">
   <div class="row">
+
     <div class="col">
       <p class="display-3">{{name}} </p>
       <p class="display-5">Ville : {{city}} </p>
+      <a class="btn btn-outline-primary" href="https://www.google.com/maps/@{{latitude}},{{longitude}},17z" target="_blank">Voir sur Maps</a>
     </div>
 
     <div class="col d-flex flex-column">
@@ -21,11 +23,10 @@
       </div>
     </div>
 
-    </div>
-
-    </div>
   </div>
 
+</div>
+</div>
 
 
 {{> footer}}

@@ -22,7 +22,7 @@ exports.search = (query, page) => {
   var next_page;
 
   var num_found = db.prepare('SELECT count(*) FROM activity WHERE name LIKE ? OR city LIKE ?').get('%' + query + '%','%' + query + '%')['count(*)'];
-  var results = db.prepare('SELECT id_activity as entry, name, img FROM activity WHERE name LIKE ? OR city LIKE ? ORDER BY id_activity LIMIT ? OFFSET ?').all('%' + query + '%', '%' + query + '%', num_per_page, (page - 1) * num_per_page);
+  var results = db.prepare('SELECT id_activity as entry, name, img, latitude, longitude FROM activity WHERE name LIKE ? OR city LIKE ? ORDER BY id_activity LIMIT ? OFFSET ?').all('%' + query + '%', '%' + query + '%', num_per_page, (page - 1) * num_per_page);
   var num_pages = parseInt(num_found / num_per_page) + 1;
   if (page==num_pages){
     next_page = page;
@@ -65,7 +65,7 @@ exports.new_user = function new_user(name, password){
 
 exports.suggestion = function suggestion(){
   const num_per_page = 4;
-  var random = db.prepare('SELECT id_activity as entry, name, img FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
+  var random = db.prepare('SELECT id_activity as entry, name, img, latitude, longitude FROM activity ORDER BY RANDOM() LIMIT ?').all(num_per_page);
 
   return {
     random: random
@@ -103,7 +103,7 @@ exports.favorites = (id_user, page) => {
   var next_page;
 
   var num_fav = db.prepare('SELECT count(id_activity) FROM favorite WHERE id_user=?').get(id_user)['count(id_activity)'];
-  var fav = db.prepare('SELECT activity.id_activity as entry, name, img FROM activity INNER JOIN favorite WHERE activity.id_activity=favorite.id_activity and favorite.id_user=? ORDER BY activity.id_activity LIMIT ? OFFSET ?').all(id_user, num_per_page, (page - 1) * num_per_page);
+  var fav = db.prepare('SELECT activity.id_activity as entry, name, img, latitude, longitude FROM activity INNER JOIN favorite WHERE activity.id_activity=favorite.id_activity and favorite.id_user=? ORDER BY activity.id_activity LIMIT ? OFFSET ?').all(id_user, num_per_page, (page - 1) * num_per_page);
   var num_pages = parseInt(num_fav / num_per_page) + 1;
   if (page==num_pages){
     next_page = null;
