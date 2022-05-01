@@ -96,14 +96,14 @@ exports.delete_favorite = function delete_favorite(id_user, id_activity){
 //   };
 // }
 
-exports.favorites = (query, page) => {
+exports.favorites = (id_user, id_activity, page) => {
   const num_per_page = 32;
   page = parseInt(page || 1);
   var previous_page;
   var next_page;
 
-  var num_fav = db.prepare('SELECT count(*) FROM favorite WHERE id_user=?').get(id_user)['count(*)'];
-  var fav = db.prepare('SELECT * FROM activity INNER JOIN favorite WHERE activity.id_activity=? favorite.id_user=? ORDER BY activity.id_activity LIMIT ? OFFSET ?').all(favorite.id_activity, id_user, num_per_page, (page - 1) * num_per_page);
+  var num_fav = db.prepare('SELECT count(id_activity) FROM favorite WHERE id_user=?').get(id_user)['count(*)'];
+  var fav = db.prepare('SELECT * FROM activity INNER JOIN favorite WHERE activity.id_activity=? favorite.id_user=? ORDER BY activity.id_activity LIMIT ? OFFSET ?').all(id_activity, id_user, num_per_page, (page - 1) * num_per_page);
   var num_pages = parseInt(num_found / num_per_page) + 1;
   if (page==num_pages){
     next_page = null;
